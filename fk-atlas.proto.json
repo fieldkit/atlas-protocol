@@ -93,6 +93,22 @@
             }
           }
         },
+        "TwoWireQuery": {
+          "fields": {
+            "read": {
+              "type": "uint32",
+              "id": 1
+            },
+            "write": {
+              "type": "uint32",
+              "id": 2
+            },
+            "data": {
+              "type": "bytes",
+              "id": 3
+            }
+          }
+        },
         "WireAtlasQuery": {
           "fields": {
             "type": {
@@ -102,6 +118,10 @@
             "calibration": {
               "type": "AtlasCalibrationCommand",
               "id": 2
+            },
+            "wire": {
+              "type": "TwoWireQuery",
+              "id": 3
             }
           }
         },
@@ -134,6 +154,14 @@
             "orp": {
               "type": "OrpCalibrations",
               "id": 7
+            }
+          }
+        },
+        "TwoWireReply": {
+          "fields": {
+            "data": {
+              "type": "bytes",
+              "id": 1
             }
           }
         },
@@ -177,6 +205,10 @@
             "calibration": {
               "type": "AtlasCalibrationStatus",
               "id": 3
+            },
+            "wire": {
+              "type": "TwoWireReply",
+              "id": 4
             }
           }
         }

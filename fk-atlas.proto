@@ -62,9 +62,16 @@ message AtlasCalibrationCommand {
   float value = 7;
 }
 
+message TwoWireQuery {
+  uint32 read = 1;
+  uint32 write = 2;
+  bytes data = 3;
+}
+
 message WireAtlasQuery {
   QueryType type = 1;
   AtlasCalibrationCommand calibration = 2;
+  TwoWireQuery wire = 3;
 }
 
 message AtlasCalibrationStatus {
@@ -75,6 +82,10 @@ message AtlasCalibrationStatus {
   PhCalibrations ph = 5;
   EcCalibrations ec = 6;
   OrpCalibrations orp = 7;
+}
+
+message TwoWireReply {
+  bytes data = 1;
 }
 
 enum ReplyType {
@@ -99,4 +110,5 @@ message WireAtlasReply {
   ReplyType type = 1;
   Error error = 2;
   AtlasCalibrationStatus calibration = 3;
+  TwoWireReply wire = 4;
 }

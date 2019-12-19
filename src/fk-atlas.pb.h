@@ -110,6 +110,12 @@ typedef enum _fk_atlas_ErrorType {
 #define _fk_atlas_ErrorType_ARRAYSIZE ((fk_atlas_ErrorType)(fk_atlas_ErrorType_UNEXPECTED+1))
 
 /* Struct definitions */
+typedef struct _fk_atlas_TwoWireReply {
+    pb_callback_t data;
+/* @@protoc_insertion_point(struct:fk_atlas_TwoWireReply) */
+} fk_atlas_TwoWireReply;
+
+
 typedef struct _fk_atlas_AtlasCalibrationCommand {
     fk_atlas_CalibrationOperation operation;
     fk_atlas_TempCalibrations temp;
@@ -141,9 +147,18 @@ typedef struct _fk_atlas_Error {
 } fk_atlas_Error;
 
 
+typedef struct _fk_atlas_TwoWireQuery {
+    uint32_t read;
+    uint32_t write;
+    pb_callback_t data;
+/* @@protoc_insertion_point(struct:fk_atlas_TwoWireQuery) */
+} fk_atlas_TwoWireQuery;
+
+
 typedef struct _fk_atlas_WireAtlasQuery {
     fk_atlas_QueryType type;
     fk_atlas_AtlasCalibrationCommand calibration;
+    fk_atlas_TwoWireQuery wire;
 /* @@protoc_insertion_point(struct:fk_atlas_WireAtlasQuery) */
 } fk_atlas_WireAtlasQuery;
 
@@ -152,23 +167,29 @@ typedef struct _fk_atlas_WireAtlasReply {
     fk_atlas_ReplyType type;
     fk_atlas_Error error;
     fk_atlas_AtlasCalibrationStatus calibration;
+    fk_atlas_TwoWireReply wire;
 /* @@protoc_insertion_point(struct:fk_atlas_WireAtlasReply) */
 } fk_atlas_WireAtlasReply;
 
 
 /* Initializer values for message structs */
 #define fk_atlas_AtlasCalibrationCommand_init_default {_fk_atlas_CalibrationOperation_MIN, _fk_atlas_TempCalibrations_MIN, _fk_atlas_DoCalibrations_MIN, _fk_atlas_PhCalibrations_MIN, _fk_atlas_EcCalibrations_MIN, _fk_atlas_OrpCalibrations_MIN, 0}
-#define fk_atlas_WireAtlasQuery_init_default     {_fk_atlas_QueryType_MIN, fk_atlas_AtlasCalibrationCommand_init_default}
+#define fk_atlas_TwoWireQuery_init_default       {0, 0, {{NULL}, NULL}}
+#define fk_atlas_WireAtlasQuery_init_default     {_fk_atlas_QueryType_MIN, fk_atlas_AtlasCalibrationCommand_init_default, fk_atlas_TwoWireQuery_init_default}
 #define fk_atlas_AtlasCalibrationStatus_init_default {_fk_atlas_SensorType_MIN, 0, _fk_atlas_TempCalibrations_MIN, _fk_atlas_DoCalibrations_MIN, _fk_atlas_PhCalibrations_MIN, _fk_atlas_EcCalibrations_MIN, _fk_atlas_OrpCalibrations_MIN}
+#define fk_atlas_TwoWireReply_init_default       {{{NULL}, NULL}}
 #define fk_atlas_Error_init_default              {_fk_atlas_ErrorType_MIN, {{NULL}, NULL}}
-#define fk_atlas_WireAtlasReply_init_default     {_fk_atlas_ReplyType_MIN, fk_atlas_Error_init_default, fk_atlas_AtlasCalibrationStatus_init_default}
+#define fk_atlas_WireAtlasReply_init_default     {_fk_atlas_ReplyType_MIN, fk_atlas_Error_init_default, fk_atlas_AtlasCalibrationStatus_init_default, fk_atlas_TwoWireReply_init_default}
 #define fk_atlas_AtlasCalibrationCommand_init_zero {_fk_atlas_CalibrationOperation_MIN, _fk_atlas_TempCalibrations_MIN, _fk_atlas_DoCalibrations_MIN, _fk_atlas_PhCalibrations_MIN, _fk_atlas_EcCalibrations_MIN, _fk_atlas_OrpCalibrations_MIN, 0}
-#define fk_atlas_WireAtlasQuery_init_zero        {_fk_atlas_QueryType_MIN, fk_atlas_AtlasCalibrationCommand_init_zero}
+#define fk_atlas_TwoWireQuery_init_zero          {0, 0, {{NULL}, NULL}}
+#define fk_atlas_WireAtlasQuery_init_zero        {_fk_atlas_QueryType_MIN, fk_atlas_AtlasCalibrationCommand_init_zero, fk_atlas_TwoWireQuery_init_zero}
 #define fk_atlas_AtlasCalibrationStatus_init_zero {_fk_atlas_SensorType_MIN, 0, _fk_atlas_TempCalibrations_MIN, _fk_atlas_DoCalibrations_MIN, _fk_atlas_PhCalibrations_MIN, _fk_atlas_EcCalibrations_MIN, _fk_atlas_OrpCalibrations_MIN}
+#define fk_atlas_TwoWireReply_init_zero          {{{NULL}, NULL}}
 #define fk_atlas_Error_init_zero                 {_fk_atlas_ErrorType_MIN, {{NULL}, NULL}}
-#define fk_atlas_WireAtlasReply_init_zero        {_fk_atlas_ReplyType_MIN, fk_atlas_Error_init_zero, fk_atlas_AtlasCalibrationStatus_init_zero}
+#define fk_atlas_WireAtlasReply_init_zero        {_fk_atlas_ReplyType_MIN, fk_atlas_Error_init_zero, fk_atlas_AtlasCalibrationStatus_init_zero, fk_atlas_TwoWireReply_init_zero}
 
 /* Field tags (for use in manual encoding/decoding) */
+#define fk_atlas_TwoWireReply_data_tag           1
 #define fk_atlas_AtlasCalibrationCommand_operation_tag 1
 #define fk_atlas_AtlasCalibrationCommand_temp_tag 2
 #define fk_atlas_AtlasCalibrationCommand_do_tag  3
@@ -185,11 +206,16 @@ typedef struct _fk_atlas_WireAtlasReply {
 #define fk_atlas_AtlasCalibrationStatus_orp_tag  7
 #define fk_atlas_Error_type_tag                  1
 #define fk_atlas_Error_message_tag               2
+#define fk_atlas_TwoWireQuery_read_tag           1
+#define fk_atlas_TwoWireQuery_write_tag          2
+#define fk_atlas_TwoWireQuery_data_tag           3
 #define fk_atlas_WireAtlasQuery_type_tag         1
 #define fk_atlas_WireAtlasQuery_calibration_tag  2
+#define fk_atlas_WireAtlasQuery_wire_tag         3
 #define fk_atlas_WireAtlasReply_type_tag         1
 #define fk_atlas_WireAtlasReply_error_tag        2
 #define fk_atlas_WireAtlasReply_calibration_tag  3
+#define fk_atlas_WireAtlasReply_wire_tag         4
 
 /* Struct field encoding specification for nanopb */
 #define fk_atlas_AtlasCalibrationCommand_FIELDLIST(X, a) \
@@ -203,12 +229,21 @@ X(a, STATIC, SINGULAR, FLOAT, value, 7)
 #define fk_atlas_AtlasCalibrationCommand_CALLBACK NULL
 #define fk_atlas_AtlasCalibrationCommand_DEFAULT NULL
 
+#define fk_atlas_TwoWireQuery_FIELDLIST(X, a) \
+X(a, STATIC, SINGULAR, UINT32, read, 1) \
+X(a, STATIC, SINGULAR, UINT32, write, 2) \
+X(a, CALLBACK, SINGULAR, BYTES, data, 3)
+#define fk_atlas_TwoWireQuery_CALLBACK pb_default_field_callback
+#define fk_atlas_TwoWireQuery_DEFAULT NULL
+
 #define fk_atlas_WireAtlasQuery_FIELDLIST(X, a) \
 X(a, STATIC, SINGULAR, UENUM, type, 1) \
-X(a, STATIC, SINGULAR, MESSAGE, calibration, 2)
+X(a, STATIC, SINGULAR, MESSAGE, calibration, 2) \
+X(a, STATIC, SINGULAR, MESSAGE, wire, 3)
 #define fk_atlas_WireAtlasQuery_CALLBACK NULL
 #define fk_atlas_WireAtlasQuery_DEFAULT NULL
 #define fk_atlas_WireAtlasQuery_calibration_MSGTYPE fk_atlas_AtlasCalibrationCommand
+#define fk_atlas_WireAtlasQuery_wire_MSGTYPE fk_atlas_TwoWireQuery
 
 #define fk_atlas_AtlasCalibrationStatus_FIELDLIST(X, a) \
 X(a, STATIC, SINGULAR, UENUM, type, 1) \
@@ -221,6 +256,11 @@ X(a, STATIC, SINGULAR, UENUM, orp, 7)
 #define fk_atlas_AtlasCalibrationStatus_CALLBACK NULL
 #define fk_atlas_AtlasCalibrationStatus_DEFAULT NULL
 
+#define fk_atlas_TwoWireReply_FIELDLIST(X, a) \
+X(a, CALLBACK, SINGULAR, BYTES, data, 1)
+#define fk_atlas_TwoWireReply_CALLBACK pb_default_field_callback
+#define fk_atlas_TwoWireReply_DEFAULT NULL
+
 #define fk_atlas_Error_FIELDLIST(X, a) \
 X(a, STATIC, SINGULAR, UENUM, type, 1) \
 X(a, CALLBACK, SINGULAR, STRING, message, 2)
@@ -230,29 +270,37 @@ X(a, CALLBACK, SINGULAR, STRING, message, 2)
 #define fk_atlas_WireAtlasReply_FIELDLIST(X, a) \
 X(a, STATIC, SINGULAR, UENUM, type, 1) \
 X(a, STATIC, SINGULAR, MESSAGE, error, 2) \
-X(a, STATIC, SINGULAR, MESSAGE, calibration, 3)
+X(a, STATIC, SINGULAR, MESSAGE, calibration, 3) \
+X(a, STATIC, SINGULAR, MESSAGE, wire, 4)
 #define fk_atlas_WireAtlasReply_CALLBACK NULL
 #define fk_atlas_WireAtlasReply_DEFAULT NULL
 #define fk_atlas_WireAtlasReply_error_MSGTYPE fk_atlas_Error
 #define fk_atlas_WireAtlasReply_calibration_MSGTYPE fk_atlas_AtlasCalibrationStatus
+#define fk_atlas_WireAtlasReply_wire_MSGTYPE fk_atlas_TwoWireReply
 
 extern const pb_msgdesc_t fk_atlas_AtlasCalibrationCommand_msg;
+extern const pb_msgdesc_t fk_atlas_TwoWireQuery_msg;
 extern const pb_msgdesc_t fk_atlas_WireAtlasQuery_msg;
 extern const pb_msgdesc_t fk_atlas_AtlasCalibrationStatus_msg;
+extern const pb_msgdesc_t fk_atlas_TwoWireReply_msg;
 extern const pb_msgdesc_t fk_atlas_Error_msg;
 extern const pb_msgdesc_t fk_atlas_WireAtlasReply_msg;
 
 /* Defines for backwards compatibility with code written before nanopb-0.4.0 */
 #define fk_atlas_AtlasCalibrationCommand_fields &fk_atlas_AtlasCalibrationCommand_msg
+#define fk_atlas_TwoWireQuery_fields &fk_atlas_TwoWireQuery_msg
 #define fk_atlas_WireAtlasQuery_fields &fk_atlas_WireAtlasQuery_msg
 #define fk_atlas_AtlasCalibrationStatus_fields &fk_atlas_AtlasCalibrationStatus_msg
+#define fk_atlas_TwoWireReply_fields &fk_atlas_TwoWireReply_msg
 #define fk_atlas_Error_fields &fk_atlas_Error_msg
 #define fk_atlas_WireAtlasReply_fields &fk_atlas_WireAtlasReply_msg
 
 /* Maximum encoded size of messages (where known) */
 #define fk_atlas_AtlasCalibrationCommand_size    17
-#define fk_atlas_WireAtlasQuery_size             21
+/* fk_atlas_TwoWireQuery_size depends on runtime parameters */
+/* fk_atlas_WireAtlasQuery_size depends on runtime parameters */
 #define fk_atlas_AtlasCalibrationStatus_size     18
+/* fk_atlas_TwoWireReply_size depends on runtime parameters */
 /* fk_atlas_Error_size depends on runtime parameters */
 /* fk_atlas_WireAtlasReply_size depends on runtime parameters */
 
