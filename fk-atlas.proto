@@ -2,16 +2,79 @@ syntax = "proto3";
 package fk_atlas;
 
 enum SensorType {
-  PH = 0;
-  TEMP = 1;
-  ORP = 2;
-  DO = 3;
-  EC = 4;
+  SENSOR_NONE = 0;
+  SENSOR_PH = 1;
+  SENSOR_TEMP = 2;
+  SENSOR_ORP = 3;
+  SENSOR_DO = 4;
+  SENSOR_EC = 5;
 }
 
 enum QueryType {
   QUERY_NONE = 0;
-  QUERY_ATLAS_COMMAND = 1;
+}
+
+enum CalibrationOperation {
+  CALIBRATION_NONE = 0;
+  CALIBRATION_STATUS = 1;
+  CALIBRATION_CLEAR = 2;
+  CALIBRATION_SET = 3;
+}
+
+enum TempCalibrations {
+  TEMP_NONE = 0;
+  TEMP_SINGLE = 1;
+}
+
+enum DoCalibrations {
+  DO_NONE = 0;
+  DO_ATMOSPHERE = 1;
+  DO_ZERO = 2;
+}
+
+enum PhCalibrations {
+  PH_NONE = 0;
+  PH_LOW = 1;
+  PH_MIDDLE = 2;
+  PH_HIGH = 4;
+}
+
+enum EcCalibrations {
+  EC_NONE = 0;
+  EC_DRY = 1;
+  EC_SINGLE = 2;
+  EC_DUAL_LOW = 4;
+  EC_DUAL_HIGH = 8;
+}
+
+enum OrpCalibrations {
+  ORP_NONE = 0;
+  ORP_SINGLE = 1;
+}
+
+message AtlasCalibrationCommand {
+  CalibrationOperation operation = 1;
+  TempCalibrations temp = 2;
+  DoCalibrations do = 3;
+  PhCalibrations ph = 4;
+  EcCalibrations ec = 5;
+  OrpCalibrations orp = 6;
+  float value = 7;
+}
+
+message WireAtlasQuery {
+  QueryType type = 1;
+  AtlasCalibrationCommand calibration = 2;
+}
+
+message AtlasCalibrationStatus {
+  SensorType type = 1;
+  uint32 time = 2;
+  TempCalibrations temp = 3;
+  DoCalibrations do = 4;
+  PhCalibrations ph = 5;
+  EcCalibrations ec = 6;
+  OrpCalibrations orp = 7;
 }
 
 enum ReplyType {
@@ -19,21 +82,6 @@ enum ReplyType {
   REPLY_RETRY = 1;
   REPLY_ERROR = 2;
   REPLY_ATLAS_COMMAND = 3;
-}
-
-message AtlasCommand {
-  SensorType sensor = 1;
-  string command = 2;
-}
-
-message AtlasReply {
-  SensorType sensor = 1;
-  string reply = 2;
-}
-
-message WireAtlasQuery {
-  QueryType type = 1;
-  AtlasCommand atlasCommand = 2;
 }
 
 enum ErrorType {
@@ -50,5 +98,5 @@ message Error {
 message WireAtlasReply {
   ReplyType type = 1;
   Error error = 2;
-  AtlasReply atlasReply = 3;
+  AtlasCalibrationStatus calibration = 3;
 }

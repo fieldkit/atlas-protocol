@@ -8,19 +8,25 @@
 #error Regenerate this file with the current version of nanopb generator.
 #endif
 
-PB_BIND(fk_atlas_AtlasCommand, fk_atlas_AtlasCommand, AUTO)
-
-
-PB_BIND(fk_atlas_AtlasReply, fk_atlas_AtlasReply, AUTO)
+PB_BIND(fk_atlas_AtlasCalibrationCommand, fk_atlas_AtlasCalibrationCommand, AUTO)
 
 
 PB_BIND(fk_atlas_WireAtlasQuery, fk_atlas_WireAtlasQuery, AUTO)
+
+
+PB_BIND(fk_atlas_AtlasCalibrationStatus, fk_atlas_AtlasCalibrationStatus, AUTO)
 
 
 PB_BIND(fk_atlas_Error, fk_atlas_Error, AUTO)
 
 
 PB_BIND(fk_atlas_WireAtlasReply, fk_atlas_WireAtlasReply, AUTO)
+
+
+
+
+
+
 
 
 

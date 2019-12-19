@@ -4,48 +4,92 @@
       "nested": {
         "SensorType": {
           "values": {
-            "PH": 0,
-            "TEMP": 1,
-            "ORP": 2,
-            "DO": 3,
-            "EC": 4
+            "SENSOR_NONE": 0,
+            "SENSOR_PH": 1,
+            "SENSOR_TEMP": 2,
+            "SENSOR_ORP": 3,
+            "SENSOR_DO": 4,
+            "SENSOR_EC": 5
           }
         },
         "QueryType": {
           "values": {
-            "QUERY_NONE": 0,
-            "QUERY_ATLAS_COMMAND": 1
+            "QUERY_NONE": 0
           }
         },
-        "ReplyType": {
+        "CalibrationOperation": {
           "values": {
-            "REPLY_NONE": 0,
-            "REPLY_RETRY": 1,
-            "REPLY_ERROR": 2,
-            "REPLY_ATLAS_COMMAND": 3
+            "CALIBRATION_NONE": 0,
+            "CALIBRATION_STATUS": 1,
+            "CALIBRATION_CLEAR": 2,
+            "CALIBRATION_SET": 3
           }
         },
-        "AtlasCommand": {
-          "fields": {
-            "sensor": {
-              "type": "SensorType",
-              "id": 1
-            },
-            "command": {
-              "type": "string",
-              "id": 2
-            }
+        "TempCalibrations": {
+          "values": {
+            "TEMP_NONE": 0,
+            "TEMP_SINGLE": 1
           }
         },
-        "AtlasReply": {
+        "DoCalibrations": {
+          "values": {
+            "DO_NONE": 0,
+            "DO_ATMOSPHERE": 1,
+            "DO_ZERO": 2
+          }
+        },
+        "PhCalibrations": {
+          "values": {
+            "PH_NONE": 0,
+            "PH_LOW": 1,
+            "PH_MIDDLE": 2,
+            "PH_HIGH": 4
+          }
+        },
+        "EcCalibrations": {
+          "values": {
+            "EC_NONE": 0,
+            "EC_DRY": 1,
+            "EC_SINGLE": 2,
+            "EC_DUAL_LOW": 4,
+            "EC_DUAL_HIGH": 8
+          }
+        },
+        "OrpCalibrations": {
+          "values": {
+            "ORP_NONE": 0,
+            "ORP_SINGLE": 1
+          }
+        },
+        "AtlasCalibrationCommand": {
           "fields": {
-            "sensor": {
-              "type": "SensorType",
+            "operation": {
+              "type": "CalibrationOperation",
               "id": 1
             },
-            "reply": {
-              "type": "string",
+            "temp": {
+              "type": "TempCalibrations",
               "id": 2
+            },
+            "do": {
+              "type": "DoCalibrations",
+              "id": 3
+            },
+            "ph": {
+              "type": "PhCalibrations",
+              "id": 4
+            },
+            "ec": {
+              "type": "EcCalibrations",
+              "id": 5
+            },
+            "orp": {
+              "type": "OrpCalibrations",
+              "id": 6
+            },
+            "value": {
+              "type": "float",
+              "id": 7
             }
           }
         },
@@ -55,10 +99,50 @@
               "type": "QueryType",
               "id": 1
             },
-            "atlasCommand": {
-              "type": "AtlasCommand",
+            "calibration": {
+              "type": "AtlasCalibrationCommand",
               "id": 2
             }
+          }
+        },
+        "AtlasCalibrationStatus": {
+          "fields": {
+            "type": {
+              "type": "SensorType",
+              "id": 1
+            },
+            "time": {
+              "type": "uint32",
+              "id": 2
+            },
+            "temp": {
+              "type": "TempCalibrations",
+              "id": 3
+            },
+            "do": {
+              "type": "DoCalibrations",
+              "id": 4
+            },
+            "ph": {
+              "type": "PhCalibrations",
+              "id": 5
+            },
+            "ec": {
+              "type": "EcCalibrations",
+              "id": 6
+            },
+            "orp": {
+              "type": "OrpCalibrations",
+              "id": 7
+            }
+          }
+        },
+        "ReplyType": {
+          "values": {
+            "REPLY_NONE": 0,
+            "REPLY_RETRY": 1,
+            "REPLY_ERROR": 2,
+            "REPLY_ATLAS_COMMAND": 3
           }
         },
         "ErrorType": {
@@ -90,8 +174,8 @@
               "type": "Error",
               "id": 2
             },
-            "atlasReply": {
-              "type": "AtlasReply",
+            "calibration": {
+              "type": "AtlasCalibrationStatus",
               "id": 3
             }
           }
