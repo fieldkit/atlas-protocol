@@ -119,7 +119,7 @@ typedef struct _fk_atlas_TwoWireReply {
 typedef struct _fk_atlas_AtlasCalibrationCommand {
     fk_atlas_CalibrationOperation operation;
     fk_atlas_TempCalibrations temp;
-    fk_atlas_DoCalibrations do;
+    fk_atlas_DoCalibrations dissolvedOxygen;
     fk_atlas_PhCalibrations ph;
     fk_atlas_EcCalibrations ec;
     fk_atlas_OrpCalibrations orp;
@@ -132,7 +132,7 @@ typedef struct _fk_atlas_AtlasCalibrationStatus {
     fk_atlas_SensorType type;
     uint32_t time;
     fk_atlas_TempCalibrations temp;
-    fk_atlas_DoCalibrations do;
+    fk_atlas_DoCalibrations dissolvedOxygen;
     fk_atlas_PhCalibrations ph;
     fk_atlas_EcCalibrations ec;
     fk_atlas_OrpCalibrations orp;
@@ -192,7 +192,7 @@ typedef struct _fk_atlas_WireAtlasReply {
 #define fk_atlas_TwoWireReply_data_tag           1
 #define fk_atlas_AtlasCalibrationCommand_operation_tag 1
 #define fk_atlas_AtlasCalibrationCommand_temp_tag 2
-#define fk_atlas_AtlasCalibrationCommand_do_tag  3
+#define fk_atlas_AtlasCalibrationCommand_dissolvedOxygen_tag 3
 #define fk_atlas_AtlasCalibrationCommand_ph_tag  4
 #define fk_atlas_AtlasCalibrationCommand_ec_tag  5
 #define fk_atlas_AtlasCalibrationCommand_orp_tag 6
@@ -200,7 +200,7 @@ typedef struct _fk_atlas_WireAtlasReply {
 #define fk_atlas_AtlasCalibrationStatus_type_tag 1
 #define fk_atlas_AtlasCalibrationStatus_time_tag 2
 #define fk_atlas_AtlasCalibrationStatus_temp_tag 3
-#define fk_atlas_AtlasCalibrationStatus_do_tag   4
+#define fk_atlas_AtlasCalibrationStatus_dissolvedOxygen_tag 4
 #define fk_atlas_AtlasCalibrationStatus_ph_tag   5
 #define fk_atlas_AtlasCalibrationStatus_ec_tag   6
 #define fk_atlas_AtlasCalibrationStatus_orp_tag  7
@@ -221,7 +221,7 @@ typedef struct _fk_atlas_WireAtlasReply {
 #define fk_atlas_AtlasCalibrationCommand_FIELDLIST(X, a) \
 X(a, STATIC, SINGULAR, UENUM, operation, 1) \
 X(a, STATIC, SINGULAR, UENUM, temp, 2) \
-X(a, STATIC, SINGULAR, UENUM, do, 3) \
+X(a, STATIC, SINGULAR, UENUM, dissolvedOxygen, 3) \
 X(a, STATIC, SINGULAR, UENUM, ph, 4) \
 X(a, STATIC, SINGULAR, UENUM, ec, 5) \
 X(a, STATIC, SINGULAR, UENUM, orp, 6) \
@@ -249,7 +249,7 @@ X(a, STATIC, SINGULAR, MESSAGE, wire, 3)
 X(a, STATIC, SINGULAR, UENUM, type, 1) \
 X(a, STATIC, SINGULAR, UINT32, time, 2) \
 X(a, STATIC, SINGULAR, UENUM, temp, 3) \
-X(a, STATIC, SINGULAR, UENUM, do, 4) \
+X(a, STATIC, SINGULAR, UENUM, dissolvedOxygen, 4) \
 X(a, STATIC, SINGULAR, UENUM, ph, 5) \
 X(a, STATIC, SINGULAR, UENUM, ec, 6) \
 X(a, STATIC, SINGULAR, UENUM, orp, 7)

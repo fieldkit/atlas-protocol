@@ -55,7 +55,7 @@ enum OrpCalibrations {
 message AtlasCalibrationCommand {
   CalibrationOperation operation = 1;
   TempCalibrations temp = 2;
-  DoCalibrations do = 3;
+  DoCalibrations dissolvedOxygen = 3;
   PhCalibrations ph = 4;
   EcCalibrations ec = 5;
   OrpCalibrations orp = 6;
@@ -78,7 +78,7 @@ message AtlasCalibrationStatus {
   SensorType type = 1;
   uint32 time = 2;
   TempCalibrations temp = 3;
-  DoCalibrations do = 4;
+  DoCalibrations dissolvedOxygen = 4;
   PhCalibrations ph = 5;
   EcCalibrations ec = 6;
   OrpCalibrations orp = 7;

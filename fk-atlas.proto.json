@@ -71,7 +71,7 @@
               "type": "TempCalibrations",
               "id": 2
             },
-            "do": {
+            "dissolvedOxygen": {
               "type": "DoCalibrations",
               "id": 3
             },
@@ -139,7 +139,7 @@
               "type": "TempCalibrations",
               "id": 3
             },
-            "do": {
+            "dissolvedOxygen": {
               "type": "DoCalibrations",
               "id": 4
             },
