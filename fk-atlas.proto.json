@@ -198,7 +198,8 @@
               "type": "ReplyType",
               "id": 1
             },
-            "error": {
+            "errors": {
+              "rule": "repeated",
               "type": "Error",
               "id": 2
             },

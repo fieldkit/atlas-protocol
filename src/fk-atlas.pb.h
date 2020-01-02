@@ -165,7 +165,7 @@ typedef struct _fk_atlas_WireAtlasQuery {
 
 typedef struct _fk_atlas_WireAtlasReply {
     fk_atlas_ReplyType type;
-    fk_atlas_Error error;
+    pb_callback_t errors;
     fk_atlas_AtlasCalibrationStatus calibration;
     fk_atlas_TwoWireReply wire;
 /* @@protoc_insertion_point(struct:fk_atlas_WireAtlasReply) */
@@ -179,14 +179,14 @@ typedef struct _fk_atlas_WireAtlasReply {
 #define fk_atlas_AtlasCalibrationStatus_init_default {_fk_atlas_SensorType_MIN, 0, _fk_atlas_TempCalibrations_MIN, _fk_atlas_DoCalibrations_MIN, _fk_atlas_PhCalibrations_MIN, _fk_atlas_EcCalibrations_MIN, _fk_atlas_OrpCalibrations_MIN}
 #define fk_atlas_TwoWireReply_init_default       {{{NULL}, NULL}}
 #define fk_atlas_Error_init_default              {_fk_atlas_ErrorType_MIN, {{NULL}, NULL}}
-#define fk_atlas_WireAtlasReply_init_default     {_fk_atlas_ReplyType_MIN, fk_atlas_Error_init_default, fk_atlas_AtlasCalibrationStatus_init_default, fk_atlas_TwoWireReply_init_default}
+#define fk_atlas_WireAtlasReply_init_default     {_fk_atlas_ReplyType_MIN, {{NULL}, NULL}, fk_atlas_AtlasCalibrationStatus_init_default, fk_atlas_TwoWireReply_init_default}
 #define fk_atlas_AtlasCalibrationCommand_init_zero {_fk_atlas_CalibrationOperation_MIN, _fk_atlas_TempCalibrations_MIN, _fk_atlas_DoCalibrations_MIN, _fk_atlas_PhCalibrations_MIN, _fk_atlas_EcCalibrations_MIN, _fk_atlas_OrpCalibrations_MIN, 0}
 #define fk_atlas_TwoWireQuery_init_zero          {0, 0, {{NULL}, NULL}}
 #define fk_atlas_WireAtlasQuery_init_zero        {_fk_atlas_QueryType_MIN, fk_atlas_AtlasCalibrationCommand_init_zero, fk_atlas_TwoWireQuery_init_zero}
 #define fk_atlas_AtlasCalibrationStatus_init_zero {_fk_atlas_SensorType_MIN, 0, _fk_atlas_TempCalibrations_MIN, _fk_atlas_DoCalibrations_MIN, _fk_atlas_PhCalibrations_MIN, _fk_atlas_EcCalibrations_MIN, _fk_atlas_OrpCalibrations_MIN}
 #define fk_atlas_TwoWireReply_init_zero          {{{NULL}, NULL}}
 #define fk_atlas_Error_init_zero                 {_fk_atlas_ErrorType_MIN, {{NULL}, NULL}}
-#define fk_atlas_WireAtlasReply_init_zero        {_fk_atlas_ReplyType_MIN, fk_atlas_Error_init_zero, fk_atlas_AtlasCalibrationStatus_init_zero, fk_atlas_TwoWireReply_init_zero}
+#define fk_atlas_WireAtlasReply_init_zero        {_fk_atlas_ReplyType_MIN, {{NULL}, NULL}, fk_atlas_AtlasCalibrationStatus_init_zero, fk_atlas_TwoWireReply_init_zero}
 
 /* Field tags (for use in manual encoding/decoding) */
 #define fk_atlas_TwoWireReply_data_tag           1
@@ -213,7 +213,7 @@ typedef struct _fk_atlas_WireAtlasReply {
 #define fk_atlas_WireAtlasQuery_calibration_tag  2
 #define fk_atlas_WireAtlasQuery_wire_tag         3
 #define fk_atlas_WireAtlasReply_type_tag         1
-#define fk_atlas_WireAtlasReply_error_tag        2
+#define fk_atlas_WireAtlasReply_errors_tag       2
 #define fk_atlas_WireAtlasReply_calibration_tag  3
 #define fk_atlas_WireAtlasReply_wire_tag         4
 
@@ -269,12 +269,12 @@ X(a, CALLBACK, SINGULAR, STRING, message, 2)
 
 #define fk_atlas_WireAtlasReply_FIELDLIST(X, a) \
 X(a, STATIC, SINGULAR, UENUM, type, 1) \
-X(a, STATIC, SINGULAR, MESSAGE, error, 2) \
+X(a, CALLBACK, REPEATED, MESSAGE, errors, 2) \
 X(a, STATIC, SINGULAR, MESSAGE, calibration, 3) \
 X(a, STATIC, SINGULAR, MESSAGE, wire, 4)
-#define fk_atlas_WireAtlasReply_CALLBACK NULL
+#define fk_atlas_WireAtlasReply_CALLBACK pb_default_field_callback
 #define fk_atlas_WireAtlasReply_DEFAULT NULL
-#define fk_atlas_WireAtlasReply_error_MSGTYPE fk_atlas_Error
+#define fk_atlas_WireAtlasReply_errors_MSGTYPE fk_atlas_Error
 #define fk_atlas_WireAtlasReply_calibration_MSGTYPE fk_atlas_AtlasCalibrationStatus
 #define fk_atlas_WireAtlasReply_wire_MSGTYPE fk_atlas_TwoWireReply
 
