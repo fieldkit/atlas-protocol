@@ -87,6 +87,10 @@
               "type": "OrpCalibrations",
               "id": 6
             },
+            "which": {
+              "type": "uint32",
+              "id": 8
+            },
             "value": {
               "type": "float",
               "id": 7
@@ -134,6 +138,10 @@
             "time": {
               "type": "uint32",
               "id": 2
+            },
+            "raw": {
+              "type": "uint32",
+              "id": 8
             },
             "temp": {
               "type": "TempCalibrations",

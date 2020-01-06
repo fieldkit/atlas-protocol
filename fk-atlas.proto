@@ -59,6 +59,7 @@ message AtlasCalibrationCommand {
   PhCalibrations ph = 4;
   EcCalibrations ec = 5;
   OrpCalibrations orp = 6;
+  uint32 which = 8;
   float value = 7;
 }
 
@@ -77,6 +78,7 @@ message WireAtlasQuery {
 message AtlasCalibrationStatus {
   SensorType type = 1;
   uint32 time = 2;
+  uint32 raw = 8;
   TempCalibrations temp = 3;
   DoCalibrations dissolvedOxygen = 4;
   PhCalibrations ph = 5;

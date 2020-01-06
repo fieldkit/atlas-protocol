@@ -124,6 +124,7 @@ typedef struct _fk_atlas_AtlasCalibrationCommand {
     fk_atlas_EcCalibrations ec;
     fk_atlas_OrpCalibrations orp;
     float value;
+    uint32_t which;
 /* @@protoc_insertion_point(struct:fk_atlas_AtlasCalibrationCommand) */
 } fk_atlas_AtlasCalibrationCommand;
 
@@ -136,6 +137,7 @@ typedef struct _fk_atlas_AtlasCalibrationStatus {
     fk_atlas_PhCalibrations ph;
     fk_atlas_EcCalibrations ec;
     fk_atlas_OrpCalibrations orp;
+    uint32_t raw;
 /* @@protoc_insertion_point(struct:fk_atlas_AtlasCalibrationStatus) */
 } fk_atlas_AtlasCalibrationStatus;
 
@@ -173,17 +175,17 @@ typedef struct _fk_atlas_WireAtlasReply {
 
 
 /* Initializer values for message structs */
-#define fk_atlas_AtlasCalibrationCommand_init_default {_fk_atlas_CalibrationOperation_MIN, _fk_atlas_TempCalibrations_MIN, _fk_atlas_DoCalibrations_MIN, _fk_atlas_PhCalibrations_MIN, _fk_atlas_EcCalibrations_MIN, _fk_atlas_OrpCalibrations_MIN, 0}
+#define fk_atlas_AtlasCalibrationCommand_init_default {_fk_atlas_CalibrationOperation_MIN, _fk_atlas_TempCalibrations_MIN, _fk_atlas_DoCalibrations_MIN, _fk_atlas_PhCalibrations_MIN, _fk_atlas_EcCalibrations_MIN, _fk_atlas_OrpCalibrations_MIN, 0, 0}
 #define fk_atlas_TwoWireQuery_init_default       {0, 0, {{NULL}, NULL}}
 #define fk_atlas_WireAtlasQuery_init_default     {_fk_atlas_QueryType_MIN, fk_atlas_AtlasCalibrationCommand_init_default, fk_atlas_TwoWireQuery_init_default}
-#define fk_atlas_AtlasCalibrationStatus_init_default {_fk_atlas_SensorType_MIN, 0, _fk_atlas_TempCalibrations_MIN, _fk_atlas_DoCalibrations_MIN, _fk_atlas_PhCalibrations_MIN, _fk_atlas_EcCalibrations_MIN, _fk_atlas_OrpCalibrations_MIN}
+#define fk_atlas_AtlasCalibrationStatus_init_default {_fk_atlas_SensorType_MIN, 0, _fk_atlas_TempCalibrations_MIN, _fk_atlas_DoCalibrations_MIN, _fk_atlas_PhCalibrations_MIN, _fk_atlas_EcCalibrations_MIN, _fk_atlas_OrpCalibrations_MIN, 0}
 #define fk_atlas_TwoWireReply_init_default       {{{NULL}, NULL}}
 #define fk_atlas_Error_init_default              {_fk_atlas_ErrorType_MIN, {{NULL}, NULL}}
 #define fk_atlas_WireAtlasReply_init_default     {_fk_atlas_ReplyType_MIN, {{NULL}, NULL}, fk_atlas_AtlasCalibrationStatus_init_default, fk_atlas_TwoWireReply_init_default}
-#define fk_atlas_AtlasCalibrationCommand_init_zero {_fk_atlas_CalibrationOperation_MIN, _fk_atlas_TempCalibrations_MIN, _fk_atlas_DoCalibrations_MIN, _fk_atlas_PhCalibrations_MIN, _fk_atlas_EcCalibrations_MIN, _fk_atlas_OrpCalibrations_MIN, 0}
+#define fk_atlas_AtlasCalibrationCommand_init_zero {_fk_atlas_CalibrationOperation_MIN, _fk_atlas_TempCalibrations_MIN, _fk_atlas_DoCalibrations_MIN, _fk_atlas_PhCalibrations_MIN, _fk_atlas_EcCalibrations_MIN, _fk_atlas_OrpCalibrations_MIN, 0, 0}
 #define fk_atlas_TwoWireQuery_init_zero          {0, 0, {{NULL}, NULL}}
 #define fk_atlas_WireAtlasQuery_init_zero        {_fk_atlas_QueryType_MIN, fk_atlas_AtlasCalibrationCommand_init_zero, fk_atlas_TwoWireQuery_init_zero}
-#define fk_atlas_AtlasCalibrationStatus_init_zero {_fk_atlas_SensorType_MIN, 0, _fk_atlas_TempCalibrations_MIN, _fk_atlas_DoCalibrations_MIN, _fk_atlas_PhCalibrations_MIN, _fk_atlas_EcCalibrations_MIN, _fk_atlas_OrpCalibrations_MIN}
+#define fk_atlas_AtlasCalibrationStatus_init_zero {_fk_atlas_SensorType_MIN, 0, _fk_atlas_TempCalibrations_MIN, _fk_atlas_DoCalibrations_MIN, _fk_atlas_PhCalibrations_MIN, _fk_atlas_EcCalibrations_MIN, _fk_atlas_OrpCalibrations_MIN, 0}
 #define fk_atlas_TwoWireReply_init_zero          {{{NULL}, NULL}}
 #define fk_atlas_Error_init_zero                 {_fk_atlas_ErrorType_MIN, {{NULL}, NULL}}
 #define fk_atlas_WireAtlasReply_init_zero        {_fk_atlas_ReplyType_MIN, {{NULL}, NULL}, fk_atlas_AtlasCalibrationStatus_init_zero, fk_atlas_TwoWireReply_init_zero}
@@ -196,9 +198,11 @@ typedef struct _fk_atlas_WireAtlasReply {
 #define fk_atlas_AtlasCalibrationCommand_ph_tag  4
 #define fk_atlas_AtlasCalibrationCommand_ec_tag  5
 #define fk_atlas_AtlasCalibrationCommand_orp_tag 6
+#define fk_atlas_AtlasCalibrationCommand_which_tag 8
 #define fk_atlas_AtlasCalibrationCommand_value_tag 7
 #define fk_atlas_AtlasCalibrationStatus_type_tag 1
 #define fk_atlas_AtlasCalibrationStatus_time_tag 2
+#define fk_atlas_AtlasCalibrationStatus_raw_tag  8
 #define fk_atlas_AtlasCalibrationStatus_temp_tag 3
 #define fk_atlas_AtlasCalibrationStatus_dissolvedOxygen_tag 4
 #define fk_atlas_AtlasCalibrationStatus_ph_tag   5
@@ -225,7 +229,8 @@ X(a, STATIC, SINGULAR, UENUM, dissolvedOxygen, 3) \
 X(a, STATIC, SINGULAR, UENUM, ph, 4) \
 X(a, STATIC, SINGULAR, UENUM, ec, 5) \
 X(a, STATIC, SINGULAR, UENUM, orp, 6) \
-X(a, STATIC, SINGULAR, FLOAT, value, 7)
+X(a, STATIC, SINGULAR, FLOAT, value, 7) \
+X(a, STATIC, SINGULAR, UINT32, which, 8)
 #define fk_atlas_AtlasCalibrationCommand_CALLBACK NULL
 #define fk_atlas_AtlasCalibrationCommand_DEFAULT NULL
 
@@ -252,7 +257,8 @@ X(a, STATIC, SINGULAR, UENUM, temp, 3) \
 X(a, STATIC, SINGULAR, UENUM, dissolvedOxygen, 4) \
 X(a, STATIC, SINGULAR, UENUM, ph, 5) \
 X(a, STATIC, SINGULAR, UENUM, ec, 6) \
-X(a, STATIC, SINGULAR, UENUM, orp, 7)
+X(a, STATIC, SINGULAR, UENUM, orp, 7) \
+X(a, STATIC, SINGULAR, UINT32, raw, 8)
 #define fk_atlas_AtlasCalibrationStatus_CALLBACK NULL
 #define fk_atlas_AtlasCalibrationStatus_DEFAULT NULL
 
@@ -296,10 +302,10 @@ extern const pb_msgdesc_t fk_atlas_WireAtlasReply_msg;
 #define fk_atlas_WireAtlasReply_fields &fk_atlas_WireAtlasReply_msg
 
 /* Maximum encoded size of messages (where known) */
-#define fk_atlas_AtlasCalibrationCommand_size    17
+#define fk_atlas_AtlasCalibrationCommand_size    23
 /* fk_atlas_TwoWireQuery_size depends on runtime parameters */
 /* fk_atlas_WireAtlasQuery_size depends on runtime parameters */
-#define fk_atlas_AtlasCalibrationStatus_size     18
+#define fk_atlas_AtlasCalibrationStatus_size     24
 /* fk_atlas_TwoWireReply_size depends on runtime parameters */
 /* fk_atlas_Error_size depends on runtime parameters */
 /* fk_atlas_WireAtlasReply_size depends on runtime parameters */
