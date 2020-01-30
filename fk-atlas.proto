@@ -94,7 +94,8 @@ enum ReplyType {
   REPLY_NONE = 0;
   REPLY_RETRY = 1;
   REPLY_ERROR = 2;
-  REPLY_ATLAS_COMMAND = 3;
+  REPLY_STATUS = 3;
+  REPLY_COMMAND = 4;
 }
 
 enum ErrorType {

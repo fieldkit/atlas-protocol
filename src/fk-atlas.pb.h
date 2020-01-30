@@ -94,11 +94,12 @@ typedef enum _fk_atlas_ReplyType {
     fk_atlas_ReplyType_REPLY_NONE = 0,
     fk_atlas_ReplyType_REPLY_RETRY = 1,
     fk_atlas_ReplyType_REPLY_ERROR = 2,
-    fk_atlas_ReplyType_REPLY_ATLAS_COMMAND = 3
+    fk_atlas_ReplyType_REPLY_STATUS = 3,
+    fk_atlas_ReplyType_REPLY_COMMAND = 4
 } fk_atlas_ReplyType;
 #define _fk_atlas_ReplyType_MIN fk_atlas_ReplyType_REPLY_NONE
-#define _fk_atlas_ReplyType_MAX fk_atlas_ReplyType_REPLY_ATLAS_COMMAND
-#define _fk_atlas_ReplyType_ARRAYSIZE ((fk_atlas_ReplyType)(fk_atlas_ReplyType_REPLY_ATLAS_COMMAND+1))
+#define _fk_atlas_ReplyType_MAX fk_atlas_ReplyType_REPLY_COMMAND
+#define _fk_atlas_ReplyType_ARRAYSIZE ((fk_atlas_ReplyType)(fk_atlas_ReplyType_REPLY_COMMAND+1))
 
 typedef enum _fk_atlas_ErrorType {
     fk_atlas_ErrorType_NONE = 0,
