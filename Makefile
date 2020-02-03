@@ -2,8 +2,9 @@ PROTOC_VERSION = 3.11.2
 PROTOC_BIN = build/bin
 PROTOC = $(PROTOC_BIN)/protoc
 PROTO_NAME = fk-atlas
+JAVA_DEP = org/fieldkit/atlas/pb/FkAtlas.java
 
-all: build $(PROTO_NAME).proto.json $(PROTO_NAME).pb.go src/$(PROTO_NAME).pb.c src/$(PROTO_NAME).pb.h
+all: build $(PROTO_NAME).proto.json $(PROTO_NAME).pb.go src/$(PROTO_NAME).pb.c src/$(PROTO_NAME).pb.h $(JAVA_DEP)
 
 $(PROTO_NAME).proto.json: node_modules/.bin/pbjs $(PROTO_NAME).proto
 	node_modules/.bin/pbjs $(PROTO_NAME).proto -t json -o $(PROTO_NAME).proto.json
@@ -14,6 +15,9 @@ src/$(PROTO_NAME).pb.c src/$(PROTO_NAME).pb.h: $(PROTO_NAME).proto build/nanopb
 $(PROTO_NAME).pb.go: $(PROTO_NAME).proto
 	go get -u github.com/golang/protobuf/protoc-gen-go
 	$(PROTOC) --go_out=./ $(PROTO_NAME).proto
+
+$(JAVA_DEP): $(PROTO_NAME).proto
+	$(PROTOC) --java_out=./ $(PROTO_NAME).proto
 
 build: protoc-$(PROTOC_VERSION)-linux-x86_64.zip
 	mkdir -p build

@@ -1,5 +1,6 @@
 syntax = "proto3";
 package fk_atlas;
+option java_package = "org.fieldkit.atlas.pb";
 
 enum SensorType {
   SENSOR_NONE = 0;
