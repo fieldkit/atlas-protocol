@@ -37,4 +37,4 @@ protoc-$(PROTOC_VERSION)-linux-x86_64.zip:
 veryclean: clean
 
 clean:
-	rm -rf build *.pb.go *.pb.c *.pb.h $(PROTO_NAME).proto.json *.pb.go
+	rm -rf build *.pb.go *.pb.c *.pb.h $(PROTO_NAME).proto.json *.pb.go org
