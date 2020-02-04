@@ -711,6 +711,137 @@ public final class FkAtlas {
   }
 
   /**
+   * Protobuf enum {@code fk_atlas.PhCalibrateCommand}
+   */
+  public enum PhCalibrateCommand
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>CALIBRATE_PH_NONE = 0;</code>
+     */
+    CALIBRATE_PH_NONE(0),
+    /**
+     * <code>CALIBRATE_PH_CLEAR = 1;</code>
+     */
+    CALIBRATE_PH_CLEAR(1),
+    /**
+     * <code>CALIBRATE_PH_LOW = 2;</code>
+     */
+    CALIBRATE_PH_LOW(2),
+    /**
+     * <code>CALIBRATE_PH_MIDDLE = 3;</code>
+     */
+    CALIBRATE_PH_MIDDLE(3),
+    /**
+     * <code>CALIBRATE_PH_HIGH = 4;</code>
+     */
+    CALIBRATE_PH_HIGH(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>CALIBRATE_PH_NONE = 0;</code>
+     */
+    public static final int CALIBRATE_PH_NONE_VALUE = 0;
+    /**
+     * <code>CALIBRATE_PH_CLEAR = 1;</code>
+     */
+    public static final int CALIBRATE_PH_CLEAR_VALUE = 1;
+    /**
+     * <code>CALIBRATE_PH_LOW = 2;</code>
+     */
+    public static final int CALIBRATE_PH_LOW_VALUE = 2;
+    /**
+     * <code>CALIBRATE_PH_MIDDLE = 3;</code>
+     */
+    public static final int CALIBRATE_PH_MIDDLE_VALUE = 3;
+    /**
+     * <code>CALIBRATE_PH_HIGH = 4;</code>
+     */
+    public static final int CALIBRATE_PH_HIGH_VALUE = 4;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PhCalibrateCommand valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static PhCalibrateCommand forNumber(int value) {
+      switch (value) {
+        case 0: return CALIBRATE_PH_NONE;
+        case 1: return CALIBRATE_PH_CLEAR;
+        case 2: return CALIBRATE_PH_LOW;
+        case 3: return CALIBRATE_PH_MIDDLE;
+        case 4: return CALIBRATE_PH_HIGH;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PhCalibrateCommand>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        PhCalibrateCommand> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<PhCalibrateCommand>() {
+            public PhCalibrateCommand findValueByNumber(int number) {
+              return PhCalibrateCommand.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(6);
+    }
+
+    private static final PhCalibrateCommand[] VALUES = values();
+
+    public static PhCalibrateCommand valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private PhCalibrateCommand(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:fk_atlas.PhCalibrateCommand)
+  }
+
+  /**
    * Protobuf enum {@code fk_atlas.EcCalibrations}
    */
   public enum EcCalibrations
@@ -815,7 +946,7 @@ public final class FkAtlas {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(6);
+      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(7);
     }
 
     private static final EcCalibrations[] VALUES = values();
@@ -919,7 +1050,7 @@ public final class FkAtlas {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(7);
+      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(8);
     }
 
     private static final OrpCalibrations[] VALUES = values();
@@ -1050,7 +1181,7 @@ public final class FkAtlas {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(8);
+      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(9);
     }
 
     private static final ReplyType[] VALUES = values();
@@ -1163,7 +1294,7 @@ public final class FkAtlas {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(9);
+      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(10);
     }
 
     private static final ErrorType[] VALUES = values();
@@ -7645,15 +7776,18 @@ public final class FkAtlas {
       "ons\022\013\n\007DO_NONE\020\000\022\021\n\rDO_ATMOSPHERE\020\001\022\013\n\007D" +
       "O_ZERO\020\002*E\n\016PhCalibrations\022\013\n\007PH_NONE\020\000\022" +
       "\n\n\006PH_LOW\020\001\022\r\n\tPH_MIDDLE\020\002\022\013\n\007PH_HIGH\020\004*" +
-      "[\n\016EcCalibrations\022\013\n\007EC_NONE\020\000\022\n\n\006EC_DRY" +
-      "\020\001\022\r\n\tEC_SINGLE\020\002\022\017\n\013EC_DUAL_LOW\020\004\022\020\n\014EC" +
-      "_DUAL_HIGH\020\010*/\n\017OrpCalibrations\022\014\n\010ORP_N" +
-      "ONE\020\000\022\016\n\nORP_SINGLE\020\001*b\n\tReplyType\022\016\n\nRE" +
-      "PLY_NONE\020\000\022\017\n\013REPLY_RETRY\020\001\022\017\n\013REPLY_ERR" +
-      "OR\020\002\022\020\n\014REPLY_STATUS\020\003\022\021\n\rREPLY_COMMAND\020" +
-      "\004*2\n\tErrorType\022\010\n\004NONE\020\000\022\013\n\007GENERAL\020\001\022\016\n" +
-      "\nUNEXPECTED\020\002B\027\n\025org.fieldkit.atlas.pbb\006" +
-      "proto3"
+      "\211\001\n\022PhCalibrateCommand\022\025\n\021CALIBRATE_PH_N" +
+      "ONE\020\000\022\026\n\022CALIBRATE_PH_CLEAR\020\001\022\024\n\020CALIBRA" +
+      "TE_PH_LOW\020\002\022\027\n\023CALIBRATE_PH_MIDDLE\020\003\022\025\n\021" +
+      "CALIBRATE_PH_HIGH\020\004*[\n\016EcCalibrations\022\013\n" +
+      "\007EC_NONE\020\000\022\n\n\006EC_DRY\020\001\022\r\n\tEC_SINGLE\020\002\022\017\n" +
+      "\013EC_DUAL_LOW\020\004\022\020\n\014EC_DUAL_HIGH\020\010*/\n\017OrpC" +
+      "alibrations\022\014\n\010ORP_NONE\020\000\022\016\n\nORP_SINGLE\020" +
+      "\001*b\n\tReplyType\022\016\n\nREPLY_NONE\020\000\022\017\n\013REPLY_" +
+      "RETRY\020\001\022\017\n\013REPLY_ERROR\020\002\022\020\n\014REPLY_STATUS" +
+      "\020\003\022\021\n\rREPLY_COMMAND\020\004*2\n\tErrorType\022\010\n\004NO" +
+      "NE\020\000\022\013\n\007GENERAL\020\001\022\016\n\nUNEXPECTED\020\002B\027\n\025org" +
+      ".fieldkit.atlas.pbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

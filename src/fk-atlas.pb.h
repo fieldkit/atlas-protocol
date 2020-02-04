@@ -52,6 +52,14 @@ typedef enum _fk_atlas_PhCalibrations {
     fk_atlas_PhCalibrations_PH_HIGH = 4
 } fk_atlas_PhCalibrations;
 
+typedef enum _fk_atlas_PhCalibrateCommand {
+    fk_atlas_PhCalibrateCommand_CALIBRATE_PH_NONE = 0,
+    fk_atlas_PhCalibrateCommand_CALIBRATE_PH_CLEAR = 1,
+    fk_atlas_PhCalibrateCommand_CALIBRATE_PH_LOW = 2,
+    fk_atlas_PhCalibrateCommand_CALIBRATE_PH_MIDDLE = 3,
+    fk_atlas_PhCalibrateCommand_CALIBRATE_PH_HIGH = 4
+} fk_atlas_PhCalibrateCommand;
+
 typedef enum _fk_atlas_EcCalibrations {
     fk_atlas_EcCalibrations_EC_NONE = 0,
     fk_atlas_EcCalibrations_EC_DRY = 1,
@@ -159,6 +167,10 @@ typedef struct _fk_atlas_WireAtlasReply {
 #define _fk_atlas_PhCalibrations_MIN fk_atlas_PhCalibrations_PH_NONE
 #define _fk_atlas_PhCalibrations_MAX fk_atlas_PhCalibrations_PH_HIGH
 #define _fk_atlas_PhCalibrations_ARRAYSIZE ((fk_atlas_PhCalibrations)(fk_atlas_PhCalibrations_PH_HIGH+1))
+
+#define _fk_atlas_PhCalibrateCommand_MIN fk_atlas_PhCalibrateCommand_CALIBRATE_PH_NONE
+#define _fk_atlas_PhCalibrateCommand_MAX fk_atlas_PhCalibrateCommand_CALIBRATE_PH_HIGH
+#define _fk_atlas_PhCalibrateCommand_ARRAYSIZE ((fk_atlas_PhCalibrateCommand)(fk_atlas_PhCalibrateCommand_CALIBRATE_PH_HIGH+1))
 
 #define _fk_atlas_EcCalibrations_MIN fk_atlas_EcCalibrations_EC_NONE
 #define _fk_atlas_EcCalibrations_MAX fk_atlas_EcCalibrations_EC_DUAL_HIGH

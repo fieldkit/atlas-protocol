@@ -40,6 +40,14 @@ enum PhCalibrations {
   PH_HIGH = 4;
 }
 
+enum PhCalibrateCommand {
+  CALIBRATE_PH_NONE = 0;
+  CALIBRATE_PH_CLEAR = 1;
+  CALIBRATE_PH_LOW = 2;
+  CALIBRATE_PH_MIDDLE = 3;
+  CALIBRATE_PH_HIGH = 4;
+}
+
 enum EcCalibrations {
   EC_NONE = 0;
   EC_DRY = 1;
