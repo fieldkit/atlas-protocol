@@ -3611,6 +3611,494 @@ public final class FkAtlas {
 
   }
 
+  public interface CompensationsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:fk_atlas.Compensations)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>float temperature = 1;</code>
+     * @return The temperature.
+     */
+    float getTemperature();
+  }
+  /**
+   * Protobuf type {@code fk_atlas.Compensations}
+   */
+  public  static final class Compensations extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:fk_atlas.Compensations)
+      CompensationsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Compensations.newBuilder() to construct.
+    private Compensations(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Compensations() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Compensations();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Compensations(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13: {
+
+              temperature_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.fieldkit.atlas.pb.FkAtlas.internal_static_fk_atlas_Compensations_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.fieldkit.atlas.pb.FkAtlas.internal_static_fk_atlas_Compensations_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.fieldkit.atlas.pb.FkAtlas.Compensations.class, org.fieldkit.atlas.pb.FkAtlas.Compensations.Builder.class);
+    }
+
+    public static final int TEMPERATURE_FIELD_NUMBER = 1;
+    private float temperature_;
+    /**
+     * <code>float temperature = 1;</code>
+     * @return The temperature.
+     */
+    public float getTemperature() {
+      return temperature_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (temperature_ != 0F) {
+        output.writeFloat(1, temperature_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (temperature_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(1, temperature_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.fieldkit.atlas.pb.FkAtlas.Compensations)) {
+        return super.equals(obj);
+      }
+      org.fieldkit.atlas.pb.FkAtlas.Compensations other = (org.fieldkit.atlas.pb.FkAtlas.Compensations) obj;
+
+      if (java.lang.Float.floatToIntBits(getTemperature())
+          != java.lang.Float.floatToIntBits(
+              other.getTemperature())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TEMPERATURE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getTemperature());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.fieldkit.atlas.pb.FkAtlas.Compensations parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.fieldkit.atlas.pb.FkAtlas.Compensations parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.fieldkit.atlas.pb.FkAtlas.Compensations parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.fieldkit.atlas.pb.FkAtlas.Compensations parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.fieldkit.atlas.pb.FkAtlas.Compensations parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.fieldkit.atlas.pb.FkAtlas.Compensations parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.fieldkit.atlas.pb.FkAtlas.Compensations parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.fieldkit.atlas.pb.FkAtlas.Compensations parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.fieldkit.atlas.pb.FkAtlas.Compensations parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.fieldkit.atlas.pb.FkAtlas.Compensations parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.fieldkit.atlas.pb.FkAtlas.Compensations parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.fieldkit.atlas.pb.FkAtlas.Compensations parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.fieldkit.atlas.pb.FkAtlas.Compensations prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code fk_atlas.Compensations}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:fk_atlas.Compensations)
+        org.fieldkit.atlas.pb.FkAtlas.CompensationsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.fieldkit.atlas.pb.FkAtlas.internal_static_fk_atlas_Compensations_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.fieldkit.atlas.pb.FkAtlas.internal_static_fk_atlas_Compensations_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.fieldkit.atlas.pb.FkAtlas.Compensations.class, org.fieldkit.atlas.pb.FkAtlas.Compensations.Builder.class);
+      }
+
+      // Construct using org.fieldkit.atlas.pb.FkAtlas.Compensations.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        temperature_ = 0F;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.fieldkit.atlas.pb.FkAtlas.internal_static_fk_atlas_Compensations_descriptor;
+      }
+
+      @java.lang.Override
+      public org.fieldkit.atlas.pb.FkAtlas.Compensations getDefaultInstanceForType() {
+        return org.fieldkit.atlas.pb.FkAtlas.Compensations.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.fieldkit.atlas.pb.FkAtlas.Compensations build() {
+        org.fieldkit.atlas.pb.FkAtlas.Compensations result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.fieldkit.atlas.pb.FkAtlas.Compensations buildPartial() {
+        org.fieldkit.atlas.pb.FkAtlas.Compensations result = new org.fieldkit.atlas.pb.FkAtlas.Compensations(this);
+        result.temperature_ = temperature_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.fieldkit.atlas.pb.FkAtlas.Compensations) {
+          return mergeFrom((org.fieldkit.atlas.pb.FkAtlas.Compensations)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.fieldkit.atlas.pb.FkAtlas.Compensations other) {
+        if (other == org.fieldkit.atlas.pb.FkAtlas.Compensations.getDefaultInstance()) return this;
+        if (other.getTemperature() != 0F) {
+          setTemperature(other.getTemperature());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.fieldkit.atlas.pb.FkAtlas.Compensations parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.fieldkit.atlas.pb.FkAtlas.Compensations) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private float temperature_ ;
+      /**
+       * <code>float temperature = 1;</code>
+       * @return The temperature.
+       */
+      public float getTemperature() {
+        return temperature_;
+      }
+      /**
+       * <code>float temperature = 1;</code>
+       * @param value The temperature to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTemperature(float value) {
+        
+        temperature_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float temperature = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTemperature() {
+        
+        temperature_ = 0F;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:fk_atlas.Compensations)
+    }
+
+    // @@protoc_insertion_point(class_scope:fk_atlas.Compensations)
+    private static final org.fieldkit.atlas.pb.FkAtlas.Compensations DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.fieldkit.atlas.pb.FkAtlas.Compensations();
+    }
+
+    public static org.fieldkit.atlas.pb.FkAtlas.Compensations getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Compensations>
+        PARSER = new com.google.protobuf.AbstractParser<Compensations>() {
+      @java.lang.Override
+      public Compensations parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Compensations(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Compensations> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Compensations> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.fieldkit.atlas.pb.FkAtlas.Compensations getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface WireAtlasQueryOrBuilder extends
       // @@protoc_insertion_point(interface_extends:fk_atlas.WireAtlasQuery)
       com.google.protobuf.MessageOrBuilder {
@@ -3642,17 +4130,32 @@ public final class FkAtlas {
     org.fieldkit.atlas.pb.FkAtlas.AtlasCalibrationCommandOrBuilder getCalibrationOrBuilder();
 
     /**
-     * <code>.fk_atlas.TwoWireQuery wire = 3;</code>
+     * <code>.fk_atlas.Compensations compensations = 3;</code>
+     * @return Whether the compensations field is set.
+     */
+    boolean hasCompensations();
+    /**
+     * <code>.fk_atlas.Compensations compensations = 3;</code>
+     * @return The compensations.
+     */
+    org.fieldkit.atlas.pb.FkAtlas.Compensations getCompensations();
+    /**
+     * <code>.fk_atlas.Compensations compensations = 3;</code>
+     */
+    org.fieldkit.atlas.pb.FkAtlas.CompensationsOrBuilder getCompensationsOrBuilder();
+
+    /**
+     * <code>.fk_atlas.TwoWireQuery wire = 4;</code>
      * @return Whether the wire field is set.
      */
     boolean hasWire();
     /**
-     * <code>.fk_atlas.TwoWireQuery wire = 3;</code>
+     * <code>.fk_atlas.TwoWireQuery wire = 4;</code>
      * @return The wire.
      */
     org.fieldkit.atlas.pb.FkAtlas.TwoWireQuery getWire();
     /**
-     * <code>.fk_atlas.TwoWireQuery wire = 3;</code>
+     * <code>.fk_atlas.TwoWireQuery wire = 4;</code>
      */
     org.fieldkit.atlas.pb.FkAtlas.TwoWireQueryOrBuilder getWireOrBuilder();
   }
@@ -3722,6 +4225,19 @@ public final class FkAtlas {
               break;
             }
             case 26: {
+              org.fieldkit.atlas.pb.FkAtlas.Compensations.Builder subBuilder = null;
+              if (compensations_ != null) {
+                subBuilder = compensations_.toBuilder();
+              }
+              compensations_ = input.readMessage(org.fieldkit.atlas.pb.FkAtlas.Compensations.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(compensations_);
+                compensations_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
               org.fieldkit.atlas.pb.FkAtlas.TwoWireQuery.Builder subBuilder = null;
               if (wire_ != null) {
                 subBuilder = wire_.toBuilder();
@@ -3808,24 +4324,47 @@ public final class FkAtlas {
       return getCalibration();
     }
 
-    public static final int WIRE_FIELD_NUMBER = 3;
+    public static final int COMPENSATIONS_FIELD_NUMBER = 3;
+    private org.fieldkit.atlas.pb.FkAtlas.Compensations compensations_;
+    /**
+     * <code>.fk_atlas.Compensations compensations = 3;</code>
+     * @return Whether the compensations field is set.
+     */
+    public boolean hasCompensations() {
+      return compensations_ != null;
+    }
+    /**
+     * <code>.fk_atlas.Compensations compensations = 3;</code>
+     * @return The compensations.
+     */
+    public org.fieldkit.atlas.pb.FkAtlas.Compensations getCompensations() {
+      return compensations_ == null ? org.fieldkit.atlas.pb.FkAtlas.Compensations.getDefaultInstance() : compensations_;
+    }
+    /**
+     * <code>.fk_atlas.Compensations compensations = 3;</code>
+     */
+    public org.fieldkit.atlas.pb.FkAtlas.CompensationsOrBuilder getCompensationsOrBuilder() {
+      return getCompensations();
+    }
+
+    public static final int WIRE_FIELD_NUMBER = 4;
     private org.fieldkit.atlas.pb.FkAtlas.TwoWireQuery wire_;
     /**
-     * <code>.fk_atlas.TwoWireQuery wire = 3;</code>
+     * <code>.fk_atlas.TwoWireQuery wire = 4;</code>
      * @return Whether the wire field is set.
      */
     public boolean hasWire() {
       return wire_ != null;
     }
     /**
-     * <code>.fk_atlas.TwoWireQuery wire = 3;</code>
+     * <code>.fk_atlas.TwoWireQuery wire = 4;</code>
      * @return The wire.
      */
     public org.fieldkit.atlas.pb.FkAtlas.TwoWireQuery getWire() {
       return wire_ == null ? org.fieldkit.atlas.pb.FkAtlas.TwoWireQuery.getDefaultInstance() : wire_;
     }
     /**
-     * <code>.fk_atlas.TwoWireQuery wire = 3;</code>
+     * <code>.fk_atlas.TwoWireQuery wire = 4;</code>
      */
     public org.fieldkit.atlas.pb.FkAtlas.TwoWireQueryOrBuilder getWireOrBuilder() {
       return getWire();
@@ -3851,8 +4390,11 @@ public final class FkAtlas {
       if (calibration_ != null) {
         output.writeMessage(2, getCalibration());
       }
+      if (compensations_ != null) {
+        output.writeMessage(3, getCompensations());
+      }
       if (wire_ != null) {
-        output.writeMessage(3, getWire());
+        output.writeMessage(4, getWire());
       }
       unknownFields.writeTo(output);
     }
@@ -3871,9 +4413,13 @@ public final class FkAtlas {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getCalibration());
       }
+      if (compensations_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getCompensations());
+      }
       if (wire_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getWire());
+          .computeMessageSize(4, getWire());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3896,6 +4442,11 @@ public final class FkAtlas {
         if (!getCalibration()
             .equals(other.getCalibration())) return false;
       }
+      if (hasCompensations() != other.hasCompensations()) return false;
+      if (hasCompensations()) {
+        if (!getCompensations()
+            .equals(other.getCompensations())) return false;
+      }
       if (hasWire() != other.hasWire()) return false;
       if (hasWire()) {
         if (!getWire()
@@ -3917,6 +4468,10 @@ public final class FkAtlas {
       if (hasCalibration()) {
         hash = (37 * hash) + CALIBRATION_FIELD_NUMBER;
         hash = (53 * hash) + getCalibration().hashCode();
+      }
+      if (hasCompensations()) {
+        hash = (37 * hash) + COMPENSATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getCompensations().hashCode();
       }
       if (hasWire()) {
         hash = (37 * hash) + WIRE_FIELD_NUMBER;
@@ -4063,6 +4618,12 @@ public final class FkAtlas {
           calibration_ = null;
           calibrationBuilder_ = null;
         }
+        if (compensationsBuilder_ == null) {
+          compensations_ = null;
+        } else {
+          compensations_ = null;
+          compensationsBuilder_ = null;
+        }
         if (wireBuilder_ == null) {
           wire_ = null;
         } else {
@@ -4100,6 +4661,11 @@ public final class FkAtlas {
           result.calibration_ = calibration_;
         } else {
           result.calibration_ = calibrationBuilder_.build();
+        }
+        if (compensationsBuilder_ == null) {
+          result.compensations_ = compensations_;
+        } else {
+          result.compensations_ = compensationsBuilder_.build();
         }
         if (wireBuilder_ == null) {
           result.wire_ = wire_;
@@ -4159,6 +4725,9 @@ public final class FkAtlas {
         }
         if (other.hasCalibration()) {
           mergeCalibration(other.getCalibration());
+        }
+        if (other.hasCompensations()) {
+          mergeCompensations(other.getCompensations());
         }
         if (other.hasWire()) {
           mergeWire(other.getWire());
@@ -4363,18 +4932,137 @@ public final class FkAtlas {
         return calibrationBuilder_;
       }
 
+      private org.fieldkit.atlas.pb.FkAtlas.Compensations compensations_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.fieldkit.atlas.pb.FkAtlas.Compensations, org.fieldkit.atlas.pb.FkAtlas.Compensations.Builder, org.fieldkit.atlas.pb.FkAtlas.CompensationsOrBuilder> compensationsBuilder_;
+      /**
+       * <code>.fk_atlas.Compensations compensations = 3;</code>
+       * @return Whether the compensations field is set.
+       */
+      public boolean hasCompensations() {
+        return compensationsBuilder_ != null || compensations_ != null;
+      }
+      /**
+       * <code>.fk_atlas.Compensations compensations = 3;</code>
+       * @return The compensations.
+       */
+      public org.fieldkit.atlas.pb.FkAtlas.Compensations getCompensations() {
+        if (compensationsBuilder_ == null) {
+          return compensations_ == null ? org.fieldkit.atlas.pb.FkAtlas.Compensations.getDefaultInstance() : compensations_;
+        } else {
+          return compensationsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.fk_atlas.Compensations compensations = 3;</code>
+       */
+      public Builder setCompensations(org.fieldkit.atlas.pb.FkAtlas.Compensations value) {
+        if (compensationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          compensations_ = value;
+          onChanged();
+        } else {
+          compensationsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.fk_atlas.Compensations compensations = 3;</code>
+       */
+      public Builder setCompensations(
+          org.fieldkit.atlas.pb.FkAtlas.Compensations.Builder builderForValue) {
+        if (compensationsBuilder_ == null) {
+          compensations_ = builderForValue.build();
+          onChanged();
+        } else {
+          compensationsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.fk_atlas.Compensations compensations = 3;</code>
+       */
+      public Builder mergeCompensations(org.fieldkit.atlas.pb.FkAtlas.Compensations value) {
+        if (compensationsBuilder_ == null) {
+          if (compensations_ != null) {
+            compensations_ =
+              org.fieldkit.atlas.pb.FkAtlas.Compensations.newBuilder(compensations_).mergeFrom(value).buildPartial();
+          } else {
+            compensations_ = value;
+          }
+          onChanged();
+        } else {
+          compensationsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.fk_atlas.Compensations compensations = 3;</code>
+       */
+      public Builder clearCompensations() {
+        if (compensationsBuilder_ == null) {
+          compensations_ = null;
+          onChanged();
+        } else {
+          compensations_ = null;
+          compensationsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.fk_atlas.Compensations compensations = 3;</code>
+       */
+      public org.fieldkit.atlas.pb.FkAtlas.Compensations.Builder getCompensationsBuilder() {
+        
+        onChanged();
+        return getCompensationsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.fk_atlas.Compensations compensations = 3;</code>
+       */
+      public org.fieldkit.atlas.pb.FkAtlas.CompensationsOrBuilder getCompensationsOrBuilder() {
+        if (compensationsBuilder_ != null) {
+          return compensationsBuilder_.getMessageOrBuilder();
+        } else {
+          return compensations_ == null ?
+              org.fieldkit.atlas.pb.FkAtlas.Compensations.getDefaultInstance() : compensations_;
+        }
+      }
+      /**
+       * <code>.fk_atlas.Compensations compensations = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.fieldkit.atlas.pb.FkAtlas.Compensations, org.fieldkit.atlas.pb.FkAtlas.Compensations.Builder, org.fieldkit.atlas.pb.FkAtlas.CompensationsOrBuilder> 
+          getCompensationsFieldBuilder() {
+        if (compensationsBuilder_ == null) {
+          compensationsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.fieldkit.atlas.pb.FkAtlas.Compensations, org.fieldkit.atlas.pb.FkAtlas.Compensations.Builder, org.fieldkit.atlas.pb.FkAtlas.CompensationsOrBuilder>(
+                  getCompensations(),
+                  getParentForChildren(),
+                  isClean());
+          compensations_ = null;
+        }
+        return compensationsBuilder_;
+      }
+
       private org.fieldkit.atlas.pb.FkAtlas.TwoWireQuery wire_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.fieldkit.atlas.pb.FkAtlas.TwoWireQuery, org.fieldkit.atlas.pb.FkAtlas.TwoWireQuery.Builder, org.fieldkit.atlas.pb.FkAtlas.TwoWireQueryOrBuilder> wireBuilder_;
       /**
-       * <code>.fk_atlas.TwoWireQuery wire = 3;</code>
+       * <code>.fk_atlas.TwoWireQuery wire = 4;</code>
        * @return Whether the wire field is set.
        */
       public boolean hasWire() {
         return wireBuilder_ != null || wire_ != null;
       }
       /**
-       * <code>.fk_atlas.TwoWireQuery wire = 3;</code>
+       * <code>.fk_atlas.TwoWireQuery wire = 4;</code>
        * @return The wire.
        */
       public org.fieldkit.atlas.pb.FkAtlas.TwoWireQuery getWire() {
@@ -4385,7 +5073,7 @@ public final class FkAtlas {
         }
       }
       /**
-       * <code>.fk_atlas.TwoWireQuery wire = 3;</code>
+       * <code>.fk_atlas.TwoWireQuery wire = 4;</code>
        */
       public Builder setWire(org.fieldkit.atlas.pb.FkAtlas.TwoWireQuery value) {
         if (wireBuilder_ == null) {
@@ -4401,7 +5089,7 @@ public final class FkAtlas {
         return this;
       }
       /**
-       * <code>.fk_atlas.TwoWireQuery wire = 3;</code>
+       * <code>.fk_atlas.TwoWireQuery wire = 4;</code>
        */
       public Builder setWire(
           org.fieldkit.atlas.pb.FkAtlas.TwoWireQuery.Builder builderForValue) {
@@ -4415,7 +5103,7 @@ public final class FkAtlas {
         return this;
       }
       /**
-       * <code>.fk_atlas.TwoWireQuery wire = 3;</code>
+       * <code>.fk_atlas.TwoWireQuery wire = 4;</code>
        */
       public Builder mergeWire(org.fieldkit.atlas.pb.FkAtlas.TwoWireQuery value) {
         if (wireBuilder_ == null) {
@@ -4433,7 +5121,7 @@ public final class FkAtlas {
         return this;
       }
       /**
-       * <code>.fk_atlas.TwoWireQuery wire = 3;</code>
+       * <code>.fk_atlas.TwoWireQuery wire = 4;</code>
        */
       public Builder clearWire() {
         if (wireBuilder_ == null) {
@@ -4447,7 +5135,7 @@ public final class FkAtlas {
         return this;
       }
       /**
-       * <code>.fk_atlas.TwoWireQuery wire = 3;</code>
+       * <code>.fk_atlas.TwoWireQuery wire = 4;</code>
        */
       public org.fieldkit.atlas.pb.FkAtlas.TwoWireQuery.Builder getWireBuilder() {
         
@@ -4455,7 +5143,7 @@ public final class FkAtlas {
         return getWireFieldBuilder().getBuilder();
       }
       /**
-       * <code>.fk_atlas.TwoWireQuery wire = 3;</code>
+       * <code>.fk_atlas.TwoWireQuery wire = 4;</code>
        */
       public org.fieldkit.atlas.pb.FkAtlas.TwoWireQueryOrBuilder getWireOrBuilder() {
         if (wireBuilder_ != null) {
@@ -4466,7 +5154,7 @@ public final class FkAtlas {
         }
       }
       /**
-       * <code>.fk_atlas.TwoWireQuery wire = 3;</code>
+       * <code>.fk_atlas.TwoWireQuery wire = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.fieldkit.atlas.pb.FkAtlas.TwoWireQuery, org.fieldkit.atlas.pb.FkAtlas.TwoWireQuery.Builder, org.fieldkit.atlas.pb.FkAtlas.TwoWireQueryOrBuilder> 
@@ -8183,6 +8871,11 @@ public final class FkAtlas {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_fk_atlas_TwoWireQuery_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_fk_atlas_Compensations_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_fk_atlas_Compensations_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_fk_atlas_WireAtlasQuery_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -8226,59 +8919,61 @@ public final class FkAtlas {
       "p\030\006 \001(\0162\031.fk_atlas.OrpCalibrations\022\r\n\005wh" +
       "ich\030\010 \001(\r\022\r\n\005value\030\007 \001(\002\"9\n\014TwoWireQuery" +
       "\022\014\n\004read\030\001 \001(\r\022\r\n\005write\030\002 \001(\r\022\014\n\004data\030\003 " +
-      "\001(\014\"\221\001\n\016WireAtlasQuery\022!\n\004type\030\001 \001(\0162\023.f" +
-      "k_atlas.QueryType\0226\n\013calibration\030\002 \001(\0132!" +
-      ".fk_atlas.AtlasCalibrationCommand\022$\n\004wir" +
-      "e\030\003 \001(\0132\026.fk_atlas.TwoWireQuery\"\250\002\n\026Atla" +
-      "sCalibrationStatus\022\"\n\004type\030\001 \001(\0162\024.fk_at" +
-      "las.SensorType\022\014\n\004time\030\002 \001(\r\022\013\n\003raw\030\010 \001(" +
-      "\r\022(\n\004temp\030\003 \001(\0162\032.fk_atlas.TempCalibrati" +
-      "ons\0221\n\017dissolvedOxygen\030\004 \001(\0162\030.fk_atlas." +
-      "DoCalibrations\022$\n\002ph\030\005 \001(\0162\030.fk_atlas.Ph" +
-      "Calibrations\022$\n\002ec\030\006 \001(\0162\030.fk_atlas.EcCa" +
-      "librations\022&\n\003orp\030\007 \001(\0162\031.fk_atlas.OrpCa" +
-      "librations\"\034\n\014TwoWireReply\022\014\n\004data\030\001 \001(\014" +
-      "\";\n\005Error\022!\n\004type\030\001 \001(\0162\023.fk_atlas.Error" +
-      "Type\022\017\n\007message\030\002 \001(\t\"\261\001\n\016WireAtlasReply" +
-      "\022!\n\004type\030\001 \001(\0162\023.fk_atlas.ReplyType\022\037\n\006e" +
-      "rrors\030\002 \003(\0132\017.fk_atlas.Error\0225\n\013calibrat" +
-      "ion\030\003 \001(\0132 .fk_atlas.AtlasCalibrationSta" +
-      "tus\022$\n\004wire\030\004 \001(\0132\026.fk_atlas.TwoWireRepl" +
-      "y*k\n\nSensorType\022\017\n\013SENSOR_NONE\020\000\022\r\n\tSENS" +
-      "OR_PH\020\001\022\017\n\013SENSOR_TEMP\020\002\022\016\n\nSENSOR_ORP\020\003" +
-      "\022\r\n\tSENSOR_DO\020\004\022\r\n\tSENSOR_EC\020\005*\033\n\tQueryT" +
-      "ype\022\016\n\nQUERY_NONE\020\000*p\n\024CalibrationOperat" +
-      "ion\022\024\n\020CALIBRATION_NONE\020\000\022\026\n\022CALIBRATION" +
-      "_STATUS\020\001\022\025\n\021CALIBRATION_CLEAR\020\002\022\023\n\017CALI" +
-      "BRATION_SET\020\003*2\n\020TempCalibrations\022\r\n\tTEM" +
-      "P_NONE\020\000\022\017\n\013TEMP_SINGLE\020\001*d\n\024TempCalibra" +
-      "teCommand\022\027\n\023CALIBRATE_TEMP_NONE\020\000\022\030\n\024CA" +
-      "LIBRATE_TEMP_CLEAR\020\001\022\031\n\025CALIBRATE_TEMP_S" +
-      "INGLE\020\002*=\n\016DoCalibrations\022\013\n\007DO_NONE\020\000\022\021" +
-      "\n\rDO_ATMOSPHERE\020\001\022\013\n\007DO_ZERO\020\002*w\n\022DoCali" +
-      "brateCommand\022\025\n\021CALIBRATE_DO_NONE\020\000\022\026\n\022C" +
-      "ALIBRATE_DO_CLEAR\020\001\022\033\n\027CALIBRATE_DO_ATMO" +
-      "SPHERE\020\002\022\025\n\021CALIBRATE_DO_ZERO\020\003*E\n\016PhCal" +
-      "ibrations\022\013\n\007PH_NONE\020\000\022\n\n\006PH_LOW\020\001\022\r\n\tPH" +
-      "_MIDDLE\020\002\022\013\n\007PH_HIGH\020\004*\211\001\n\022PhCalibrateCo" +
-      "mmand\022\025\n\021CALIBRATE_PH_NONE\020\000\022\026\n\022CALIBRAT" +
-      "E_PH_CLEAR\020\001\022\024\n\020CALIBRATE_PH_LOW\020\002\022\027\n\023CA" +
-      "LIBRATE_PH_MIDDLE\020\003\022\025\n\021CALIBRATE_PH_HIGH" +
-      "\020\004*[\n\016EcCalibrations\022\013\n\007EC_NONE\020\000\022\n\n\006EC_" +
-      "DRY\020\001\022\r\n\tEC_SINGLE\020\002\022\017\n\013EC_DUAL_LOW\020\004\022\020\n" +
-      "\014EC_DUAL_HIGH\020\010*\251\001\n\022EcCalibrateCommand\022\025" +
-      "\n\021CALIBRATE_EC_NONE\020\000\022\026\n\022CALIBRATE_EC_CL" +
-      "EAR\020\001\022\024\n\020CALIBRATE_EC_DRY\020\002\022\027\n\023CALIBRATE" +
-      "_EC_SINGLE\020\003\022\031\n\025CALIBRATE_EC_DUAL_LOW\020\004\022" +
-      "\032\n\026CALIBRATE_EC_DUAL_HIGH\020\005*/\n\017OrpCalibr" +
-      "ations\022\014\n\010ORP_NONE\020\000\022\016\n\nORP_SINGLE\020\001*G\n\023" +
-      "OrpCalibrateCommand\022\026\n\022CALIBRATE_ORP_NON" +
-      "E\020\000\022\030\n\024CALIBRATE_ORP_SINGLE\020\001*b\n\tReplyTy" +
-      "pe\022\016\n\nREPLY_NONE\020\000\022\017\n\013REPLY_RETRY\020\001\022\017\n\013R" +
-      "EPLY_ERROR\020\002\022\020\n\014REPLY_STATUS\020\003\022\021\n\rREPLY_" +
-      "COMMAND\020\004*2\n\tErrorType\022\010\n\004NONE\020\000\022\013\n\007GENE" +
-      "RAL\020\001\022\016\n\nUNEXPECTED\020\002B\027\n\025org.fieldkit.at" +
-      "las.pbb\006proto3"
+      "\001(\014\"$\n\rCompensations\022\023\n\013temperature\030\001 \001(" +
+      "\002\"\301\001\n\016WireAtlasQuery\022!\n\004type\030\001 \001(\0162\023.fk_" +
+      "atlas.QueryType\0226\n\013calibration\030\002 \001(\0132!.f" +
+      "k_atlas.AtlasCalibrationCommand\022.\n\rcompe" +
+      "nsations\030\003 \001(\0132\027.fk_atlas.Compensations\022" +
+      "$\n\004wire\030\004 \001(\0132\026.fk_atlas.TwoWireQuery\"\250\002" +
+      "\n\026AtlasCalibrationStatus\022\"\n\004type\030\001 \001(\0162\024" +
+      ".fk_atlas.SensorType\022\014\n\004time\030\002 \001(\r\022\013\n\003ra" +
+      "w\030\010 \001(\r\022(\n\004temp\030\003 \001(\0162\032.fk_atlas.TempCal" +
+      "ibrations\0221\n\017dissolvedOxygen\030\004 \001(\0162\030.fk_" +
+      "atlas.DoCalibrations\022$\n\002ph\030\005 \001(\0162\030.fk_at" +
+      "las.PhCalibrations\022$\n\002ec\030\006 \001(\0162\030.fk_atla" +
+      "s.EcCalibrations\022&\n\003orp\030\007 \001(\0162\031.fk_atlas" +
+      ".OrpCalibrations\"\034\n\014TwoWireReply\022\014\n\004data" +
+      "\030\001 \001(\014\";\n\005Error\022!\n\004type\030\001 \001(\0162\023.fk_atlas" +
+      ".ErrorType\022\017\n\007message\030\002 \001(\t\"\261\001\n\016WireAtla" +
+      "sReply\022!\n\004type\030\001 \001(\0162\023.fk_atlas.ReplyTyp" +
+      "e\022\037\n\006errors\030\002 \003(\0132\017.fk_atlas.Error\0225\n\013ca" +
+      "libration\030\003 \001(\0132 .fk_atlas.AtlasCalibrat" +
+      "ionStatus\022$\n\004wire\030\004 \001(\0132\026.fk_atlas.TwoWi" +
+      "reReply*k\n\nSensorType\022\017\n\013SENSOR_NONE\020\000\022\r" +
+      "\n\tSENSOR_PH\020\001\022\017\n\013SENSOR_TEMP\020\002\022\016\n\nSENSOR" +
+      "_ORP\020\003\022\r\n\tSENSOR_DO\020\004\022\r\n\tSENSOR_EC\020\005*\033\n\t" +
+      "QueryType\022\016\n\nQUERY_NONE\020\000*p\n\024Calibration" +
+      "Operation\022\024\n\020CALIBRATION_NONE\020\000\022\026\n\022CALIB" +
+      "RATION_STATUS\020\001\022\025\n\021CALIBRATION_CLEAR\020\002\022\023" +
+      "\n\017CALIBRATION_SET\020\003*2\n\020TempCalibrations\022" +
+      "\r\n\tTEMP_NONE\020\000\022\017\n\013TEMP_SINGLE\020\001*d\n\024TempC" +
+      "alibrateCommand\022\027\n\023CALIBRATE_TEMP_NONE\020\000" +
+      "\022\030\n\024CALIBRATE_TEMP_CLEAR\020\001\022\031\n\025CALIBRATE_" +
+      "TEMP_SINGLE\020\002*=\n\016DoCalibrations\022\013\n\007DO_NO" +
+      "NE\020\000\022\021\n\rDO_ATMOSPHERE\020\001\022\013\n\007DO_ZERO\020\002*w\n\022" +
+      "DoCalibrateCommand\022\025\n\021CALIBRATE_DO_NONE\020" +
+      "\000\022\026\n\022CALIBRATE_DO_CLEAR\020\001\022\033\n\027CALIBRATE_D" +
+      "O_ATMOSPHERE\020\002\022\025\n\021CALIBRATE_DO_ZERO\020\003*E\n" +
+      "\016PhCalibrations\022\013\n\007PH_NONE\020\000\022\n\n\006PH_LOW\020\001" +
+      "\022\r\n\tPH_MIDDLE\020\002\022\013\n\007PH_HIGH\020\004*\211\001\n\022PhCalib" +
+      "rateCommand\022\025\n\021CALIBRATE_PH_NONE\020\000\022\026\n\022CA" +
+      "LIBRATE_PH_CLEAR\020\001\022\024\n\020CALIBRATE_PH_LOW\020\002" +
+      "\022\027\n\023CALIBRATE_PH_MIDDLE\020\003\022\025\n\021CALIBRATE_P" +
+      "H_HIGH\020\004*[\n\016EcCalibrations\022\013\n\007EC_NONE\020\000\022" +
+      "\n\n\006EC_DRY\020\001\022\r\n\tEC_SINGLE\020\002\022\017\n\013EC_DUAL_LO" +
+      "W\020\004\022\020\n\014EC_DUAL_HIGH\020\010*\251\001\n\022EcCalibrateCom" +
+      "mand\022\025\n\021CALIBRATE_EC_NONE\020\000\022\026\n\022CALIBRATE" +
+      "_EC_CLEAR\020\001\022\024\n\020CALIBRATE_EC_DRY\020\002\022\027\n\023CAL" +
+      "IBRATE_EC_SINGLE\020\003\022\031\n\025CALIBRATE_EC_DUAL_" +
+      "LOW\020\004\022\032\n\026CALIBRATE_EC_DUAL_HIGH\020\005*/\n\017Orp" +
+      "Calibrations\022\014\n\010ORP_NONE\020\000\022\016\n\nORP_SINGLE" +
+      "\020\001*G\n\023OrpCalibrateCommand\022\026\n\022CALIBRATE_O" +
+      "RP_NONE\020\000\022\030\n\024CALIBRATE_ORP_SINGLE\020\001*b\n\tR" +
+      "eplyType\022\016\n\nREPLY_NONE\020\000\022\017\n\013REPLY_RETRY\020" +
+      "\001\022\017\n\013REPLY_ERROR\020\002\022\020\n\014REPLY_STATUS\020\003\022\021\n\r" +
+      "REPLY_COMMAND\020\004*2\n\tErrorType\022\010\n\004NONE\020\000\022\013" +
+      "\n\007GENERAL\020\001\022\016\n\nUNEXPECTED\020\002B\027\n\025org.field" +
+      "kit.atlas.pbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -8296,32 +8991,38 @@ public final class FkAtlas {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fk_atlas_TwoWireQuery_descriptor,
         new java.lang.String[] { "Read", "Write", "Data", });
-    internal_static_fk_atlas_WireAtlasQuery_descriptor =
+    internal_static_fk_atlas_Compensations_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_fk_atlas_Compensations_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_fk_atlas_Compensations_descriptor,
+        new java.lang.String[] { "Temperature", });
+    internal_static_fk_atlas_WireAtlasQuery_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_fk_atlas_WireAtlasQuery_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fk_atlas_WireAtlasQuery_descriptor,
-        new java.lang.String[] { "Type", "Calibration", "Wire", });
+        new java.lang.String[] { "Type", "Calibration", "Compensations", "Wire", });
     internal_static_fk_atlas_AtlasCalibrationStatus_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_fk_atlas_AtlasCalibrationStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fk_atlas_AtlasCalibrationStatus_descriptor,
         new java.lang.String[] { "Type", "Time", "Raw", "Temp", "DissolvedOxygen", "Ph", "Ec", "Orp", });
     internal_static_fk_atlas_TwoWireReply_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_fk_atlas_TwoWireReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fk_atlas_TwoWireReply_descriptor,
         new java.lang.String[] { "Data", });
     internal_static_fk_atlas_Error_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_fk_atlas_Error_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fk_atlas_Error_descriptor,
         new java.lang.String[] { "Type", "Message", });
     internal_static_fk_atlas_WireAtlasReply_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_fk_atlas_WireAtlasReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fk_atlas_WireAtlasReply_descriptor,

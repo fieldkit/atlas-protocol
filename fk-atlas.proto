@@ -105,10 +105,15 @@ message TwoWireQuery {
   bytes data = 3;
 }
 
+message Compensations {
+  float temperature = 1;
+}
+
 message WireAtlasQuery {
   QueryType type = 1;
   AtlasCalibrationCommand calibration = 2;
-  TwoWireQuery wire = 3;
+  Compensations compensations = 3;
+  TwoWireQuery wire = 4;
 }
 
 message AtlasCalibrationStatus {

@@ -156,6 +156,14 @@
             }
           }
         },
+        "Compensations": {
+          "fields": {
+            "temperature": {
+              "type": "float",
+              "id": 1
+            }
+          }
+        },
         "WireAtlasQuery": {
           "fields": {
             "type": {
@@ -166,9 +174,13 @@
               "type": "AtlasCalibrationCommand",
               "id": 2
             },
+            "compensations": {
+              "type": "Compensations",
+              "id": 3
+            },
             "wire": {
               "type": "TwoWireQuery",
-              "id": 3
+              "id": 4
             }
           }
         },

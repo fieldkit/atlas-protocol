@@ -12,6 +12,9 @@ PB_BIND(fk_atlas_AtlasCalibrationCommand, fk_atlas_AtlasCalibrationCommand, AUTO
 PB_BIND(fk_atlas_TwoWireQuery, fk_atlas_TwoWireQuery, AUTO)
 
 
+PB_BIND(fk_atlas_Compensations, fk_atlas_Compensations, AUTO)
+
+
 PB_BIND(fk_atlas_WireAtlasQuery, fk_atlas_WireAtlasQuery, AUTO)
 
 
