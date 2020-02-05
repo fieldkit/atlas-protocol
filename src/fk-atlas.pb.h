@@ -39,11 +39,24 @@ typedef enum _fk_atlas_TempCalibrations {
     fk_atlas_TempCalibrations_TEMP_SINGLE = 1
 } fk_atlas_TempCalibrations;
 
+typedef enum _fk_atlas_TempCalibrateCommand {
+    fk_atlas_TempCalibrateCommand_CALIBRATE_TEMP_NONE = 0,
+    fk_atlas_TempCalibrateCommand_CALIBRATE_TEMP_CLEAR = 1,
+    fk_atlas_TempCalibrateCommand_CALIBRATE_TEMP_SINGLE = 2
+} fk_atlas_TempCalibrateCommand;
+
 typedef enum _fk_atlas_DoCalibrations {
     fk_atlas_DoCalibrations_DO_NONE = 0,
     fk_atlas_DoCalibrations_DO_ATMOSPHERE = 1,
     fk_atlas_DoCalibrations_DO_ZERO = 2
 } fk_atlas_DoCalibrations;
+
+typedef enum _fk_atlas_DoCalibrateCommand {
+    fk_atlas_DoCalibrateCommand_CALIBRATE_DO_NONE = 0,
+    fk_atlas_DoCalibrateCommand_CALIBRATE_DO_CLEAR = 1,
+    fk_atlas_DoCalibrateCommand_CALIBRATE_DO_ATMOSPHERE = 2,
+    fk_atlas_DoCalibrateCommand_CALIBRATE_DO_ZERO = 3
+} fk_atlas_DoCalibrateCommand;
 
 typedef enum _fk_atlas_PhCalibrations {
     fk_atlas_PhCalibrations_PH_NONE = 0,
@@ -68,10 +81,24 @@ typedef enum _fk_atlas_EcCalibrations {
     fk_atlas_EcCalibrations_EC_DUAL_HIGH = 8
 } fk_atlas_EcCalibrations;
 
+typedef enum _fk_atlas_EcCalibrateCommand {
+    fk_atlas_EcCalibrateCommand_CALIBRATE_EC_NONE = 0,
+    fk_atlas_EcCalibrateCommand_CALIBRATE_EC_CLEAR = 1,
+    fk_atlas_EcCalibrateCommand_CALIBRATE_EC_DRY = 2,
+    fk_atlas_EcCalibrateCommand_CALIBRATE_EC_SINGLE = 3,
+    fk_atlas_EcCalibrateCommand_CALIBRATE_EC_DUAL_LOW = 4,
+    fk_atlas_EcCalibrateCommand_CALIBRATE_EC_DUAL_HIGH = 5
+} fk_atlas_EcCalibrateCommand;
+
 typedef enum _fk_atlas_OrpCalibrations {
     fk_atlas_OrpCalibrations_ORP_NONE = 0,
     fk_atlas_OrpCalibrations_ORP_SINGLE = 1
 } fk_atlas_OrpCalibrations;
+
+typedef enum _fk_atlas_OrpCalibrateCommand {
+    fk_atlas_OrpCalibrateCommand_CALIBRATE_ORP_NONE = 0,
+    fk_atlas_OrpCalibrateCommand_CALIBRATE_ORP_SINGLE = 1
+} fk_atlas_OrpCalibrateCommand;
 
 typedef enum _fk_atlas_ReplyType {
     fk_atlas_ReplyType_REPLY_NONE = 0,
@@ -160,9 +187,17 @@ typedef struct _fk_atlas_WireAtlasReply {
 #define _fk_atlas_TempCalibrations_MAX fk_atlas_TempCalibrations_TEMP_SINGLE
 #define _fk_atlas_TempCalibrations_ARRAYSIZE ((fk_atlas_TempCalibrations)(fk_atlas_TempCalibrations_TEMP_SINGLE+1))
 
+#define _fk_atlas_TempCalibrateCommand_MIN fk_atlas_TempCalibrateCommand_CALIBRATE_TEMP_NONE
+#define _fk_atlas_TempCalibrateCommand_MAX fk_atlas_TempCalibrateCommand_CALIBRATE_TEMP_SINGLE
+#define _fk_atlas_TempCalibrateCommand_ARRAYSIZE ((fk_atlas_TempCalibrateCommand)(fk_atlas_TempCalibrateCommand_CALIBRATE_TEMP_SINGLE+1))
+
 #define _fk_atlas_DoCalibrations_MIN fk_atlas_DoCalibrations_DO_NONE
 #define _fk_atlas_DoCalibrations_MAX fk_atlas_DoCalibrations_DO_ZERO
 #define _fk_atlas_DoCalibrations_ARRAYSIZE ((fk_atlas_DoCalibrations)(fk_atlas_DoCalibrations_DO_ZERO+1))
+
+#define _fk_atlas_DoCalibrateCommand_MIN fk_atlas_DoCalibrateCommand_CALIBRATE_DO_NONE
+#define _fk_atlas_DoCalibrateCommand_MAX fk_atlas_DoCalibrateCommand_CALIBRATE_DO_ZERO
+#define _fk_atlas_DoCalibrateCommand_ARRAYSIZE ((fk_atlas_DoCalibrateCommand)(fk_atlas_DoCalibrateCommand_CALIBRATE_DO_ZERO+1))
 
 #define _fk_atlas_PhCalibrations_MIN fk_atlas_PhCalibrations_PH_NONE
 #define _fk_atlas_PhCalibrations_MAX fk_atlas_PhCalibrations_PH_HIGH
@@ -176,9 +211,17 @@ typedef struct _fk_atlas_WireAtlasReply {
 #define _fk_atlas_EcCalibrations_MAX fk_atlas_EcCalibrations_EC_DUAL_HIGH
 #define _fk_atlas_EcCalibrations_ARRAYSIZE ((fk_atlas_EcCalibrations)(fk_atlas_EcCalibrations_EC_DUAL_HIGH+1))
 
+#define _fk_atlas_EcCalibrateCommand_MIN fk_atlas_EcCalibrateCommand_CALIBRATE_EC_NONE
+#define _fk_atlas_EcCalibrateCommand_MAX fk_atlas_EcCalibrateCommand_CALIBRATE_EC_DUAL_HIGH
+#define _fk_atlas_EcCalibrateCommand_ARRAYSIZE ((fk_atlas_EcCalibrateCommand)(fk_atlas_EcCalibrateCommand_CALIBRATE_EC_DUAL_HIGH+1))
+
 #define _fk_atlas_OrpCalibrations_MIN fk_atlas_OrpCalibrations_ORP_NONE
 #define _fk_atlas_OrpCalibrations_MAX fk_atlas_OrpCalibrations_ORP_SINGLE
 #define _fk_atlas_OrpCalibrations_ARRAYSIZE ((fk_atlas_OrpCalibrations)(fk_atlas_OrpCalibrations_ORP_SINGLE+1))
+
+#define _fk_atlas_OrpCalibrateCommand_MIN fk_atlas_OrpCalibrateCommand_CALIBRATE_ORP_NONE
+#define _fk_atlas_OrpCalibrateCommand_MAX fk_atlas_OrpCalibrateCommand_CALIBRATE_ORP_SINGLE
+#define _fk_atlas_OrpCalibrateCommand_ARRAYSIZE ((fk_atlas_OrpCalibrateCommand)(fk_atlas_OrpCalibrateCommand_CALIBRATE_ORP_SINGLE+1))
 
 #define _fk_atlas_ReplyType_MIN fk_atlas_ReplyType_REPLY_NONE
 #define _fk_atlas_ReplyType_MAX fk_atlas_ReplyType_REPLY_COMMAND

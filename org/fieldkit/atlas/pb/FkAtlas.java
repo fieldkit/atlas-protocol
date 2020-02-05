@@ -476,6 +476,119 @@ public final class FkAtlas {
   }
 
   /**
+   * Protobuf enum {@code fk_atlas.TempCalibrateCommand}
+   */
+  public enum TempCalibrateCommand
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>CALIBRATE_TEMP_NONE = 0;</code>
+     */
+    CALIBRATE_TEMP_NONE(0),
+    /**
+     * <code>CALIBRATE_TEMP_CLEAR = 1;</code>
+     */
+    CALIBRATE_TEMP_CLEAR(1),
+    /**
+     * <code>CALIBRATE_TEMP_SINGLE = 2;</code>
+     */
+    CALIBRATE_TEMP_SINGLE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>CALIBRATE_TEMP_NONE = 0;</code>
+     */
+    public static final int CALIBRATE_TEMP_NONE_VALUE = 0;
+    /**
+     * <code>CALIBRATE_TEMP_CLEAR = 1;</code>
+     */
+    public static final int CALIBRATE_TEMP_CLEAR_VALUE = 1;
+    /**
+     * <code>CALIBRATE_TEMP_SINGLE = 2;</code>
+     */
+    public static final int CALIBRATE_TEMP_SINGLE_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TempCalibrateCommand valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TempCalibrateCommand forNumber(int value) {
+      switch (value) {
+        case 0: return CALIBRATE_TEMP_NONE;
+        case 1: return CALIBRATE_TEMP_CLEAR;
+        case 2: return CALIBRATE_TEMP_SINGLE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TempCalibrateCommand>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        TempCalibrateCommand> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<TempCalibrateCommand>() {
+            public TempCalibrateCommand findValueByNumber(int number) {
+              return TempCalibrateCommand.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(4);
+    }
+
+    private static final TempCalibrateCommand[] VALUES = values();
+
+    public static TempCalibrateCommand valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TempCalibrateCommand(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:fk_atlas.TempCalibrateCommand)
+  }
+
+  /**
    * Protobuf enum {@code fk_atlas.DoCalibrations}
    */
   public enum DoCalibrations
@@ -562,7 +675,7 @@ public final class FkAtlas {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(4);
+      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(5);
     }
 
     private static final DoCalibrations[] VALUES = values();
@@ -586,6 +699,128 @@ public final class FkAtlas {
     }
 
     // @@protoc_insertion_point(enum_scope:fk_atlas.DoCalibrations)
+  }
+
+  /**
+   * Protobuf enum {@code fk_atlas.DoCalibrateCommand}
+   */
+  public enum DoCalibrateCommand
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>CALIBRATE_DO_NONE = 0;</code>
+     */
+    CALIBRATE_DO_NONE(0),
+    /**
+     * <code>CALIBRATE_DO_CLEAR = 1;</code>
+     */
+    CALIBRATE_DO_CLEAR(1),
+    /**
+     * <code>CALIBRATE_DO_ATMOSPHERE = 2;</code>
+     */
+    CALIBRATE_DO_ATMOSPHERE(2),
+    /**
+     * <code>CALIBRATE_DO_ZERO = 3;</code>
+     */
+    CALIBRATE_DO_ZERO(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>CALIBRATE_DO_NONE = 0;</code>
+     */
+    public static final int CALIBRATE_DO_NONE_VALUE = 0;
+    /**
+     * <code>CALIBRATE_DO_CLEAR = 1;</code>
+     */
+    public static final int CALIBRATE_DO_CLEAR_VALUE = 1;
+    /**
+     * <code>CALIBRATE_DO_ATMOSPHERE = 2;</code>
+     */
+    public static final int CALIBRATE_DO_ATMOSPHERE_VALUE = 2;
+    /**
+     * <code>CALIBRATE_DO_ZERO = 3;</code>
+     */
+    public static final int CALIBRATE_DO_ZERO_VALUE = 3;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DoCalibrateCommand valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static DoCalibrateCommand forNumber(int value) {
+      switch (value) {
+        case 0: return CALIBRATE_DO_NONE;
+        case 1: return CALIBRATE_DO_CLEAR;
+        case 2: return CALIBRATE_DO_ATMOSPHERE;
+        case 3: return CALIBRATE_DO_ZERO;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DoCalibrateCommand>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        DoCalibrateCommand> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<DoCalibrateCommand>() {
+            public DoCalibrateCommand findValueByNumber(int number) {
+              return DoCalibrateCommand.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(6);
+    }
+
+    private static final DoCalibrateCommand[] VALUES = values();
+
+    public static DoCalibrateCommand valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private DoCalibrateCommand(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:fk_atlas.DoCalibrateCommand)
   }
 
   /**
@@ -684,7 +919,7 @@ public final class FkAtlas {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(5);
+      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(7);
     }
 
     private static final PhCalibrations[] VALUES = values();
@@ -815,7 +1050,7 @@ public final class FkAtlas {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(6);
+      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(8);
     }
 
     private static final PhCalibrateCommand[] VALUES = values();
@@ -946,7 +1181,7 @@ public final class FkAtlas {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(7);
+      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(9);
     }
 
     private static final EcCalibrations[] VALUES = values();
@@ -970,6 +1205,146 @@ public final class FkAtlas {
     }
 
     // @@protoc_insertion_point(enum_scope:fk_atlas.EcCalibrations)
+  }
+
+  /**
+   * Protobuf enum {@code fk_atlas.EcCalibrateCommand}
+   */
+  public enum EcCalibrateCommand
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>CALIBRATE_EC_NONE = 0;</code>
+     */
+    CALIBRATE_EC_NONE(0),
+    /**
+     * <code>CALIBRATE_EC_CLEAR = 1;</code>
+     */
+    CALIBRATE_EC_CLEAR(1),
+    /**
+     * <code>CALIBRATE_EC_DRY = 2;</code>
+     */
+    CALIBRATE_EC_DRY(2),
+    /**
+     * <code>CALIBRATE_EC_SINGLE = 3;</code>
+     */
+    CALIBRATE_EC_SINGLE(3),
+    /**
+     * <code>CALIBRATE_EC_DUAL_LOW = 4;</code>
+     */
+    CALIBRATE_EC_DUAL_LOW(4),
+    /**
+     * <code>CALIBRATE_EC_DUAL_HIGH = 5;</code>
+     */
+    CALIBRATE_EC_DUAL_HIGH(5),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>CALIBRATE_EC_NONE = 0;</code>
+     */
+    public static final int CALIBRATE_EC_NONE_VALUE = 0;
+    /**
+     * <code>CALIBRATE_EC_CLEAR = 1;</code>
+     */
+    public static final int CALIBRATE_EC_CLEAR_VALUE = 1;
+    /**
+     * <code>CALIBRATE_EC_DRY = 2;</code>
+     */
+    public static final int CALIBRATE_EC_DRY_VALUE = 2;
+    /**
+     * <code>CALIBRATE_EC_SINGLE = 3;</code>
+     */
+    public static final int CALIBRATE_EC_SINGLE_VALUE = 3;
+    /**
+     * <code>CALIBRATE_EC_DUAL_LOW = 4;</code>
+     */
+    public static final int CALIBRATE_EC_DUAL_LOW_VALUE = 4;
+    /**
+     * <code>CALIBRATE_EC_DUAL_HIGH = 5;</code>
+     */
+    public static final int CALIBRATE_EC_DUAL_HIGH_VALUE = 5;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EcCalibrateCommand valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static EcCalibrateCommand forNumber(int value) {
+      switch (value) {
+        case 0: return CALIBRATE_EC_NONE;
+        case 1: return CALIBRATE_EC_CLEAR;
+        case 2: return CALIBRATE_EC_DRY;
+        case 3: return CALIBRATE_EC_SINGLE;
+        case 4: return CALIBRATE_EC_DUAL_LOW;
+        case 5: return CALIBRATE_EC_DUAL_HIGH;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<EcCalibrateCommand>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        EcCalibrateCommand> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<EcCalibrateCommand>() {
+            public EcCalibrateCommand findValueByNumber(int number) {
+              return EcCalibrateCommand.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(10);
+    }
+
+    private static final EcCalibrateCommand[] VALUES = values();
+
+    public static EcCalibrateCommand valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private EcCalibrateCommand(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:fk_atlas.EcCalibrateCommand)
   }
 
   /**
@@ -1050,7 +1425,7 @@ public final class FkAtlas {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(8);
+      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(11);
     }
 
     private static final OrpCalibrations[] VALUES = values();
@@ -1074,6 +1449,110 @@ public final class FkAtlas {
     }
 
     // @@protoc_insertion_point(enum_scope:fk_atlas.OrpCalibrations)
+  }
+
+  /**
+   * Protobuf enum {@code fk_atlas.OrpCalibrateCommand}
+   */
+  public enum OrpCalibrateCommand
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>CALIBRATE_ORP_NONE = 0;</code>
+     */
+    CALIBRATE_ORP_NONE(0),
+    /**
+     * <code>CALIBRATE_ORP_SINGLE = 1;</code>
+     */
+    CALIBRATE_ORP_SINGLE(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>CALIBRATE_ORP_NONE = 0;</code>
+     */
+    public static final int CALIBRATE_ORP_NONE_VALUE = 0;
+    /**
+     * <code>CALIBRATE_ORP_SINGLE = 1;</code>
+     */
+    public static final int CALIBRATE_ORP_SINGLE_VALUE = 1;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static OrpCalibrateCommand valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static OrpCalibrateCommand forNumber(int value) {
+      switch (value) {
+        case 0: return CALIBRATE_ORP_NONE;
+        case 1: return CALIBRATE_ORP_SINGLE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<OrpCalibrateCommand>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        OrpCalibrateCommand> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<OrpCalibrateCommand>() {
+            public OrpCalibrateCommand findValueByNumber(int number) {
+              return OrpCalibrateCommand.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(12);
+    }
+
+    private static final OrpCalibrateCommand[] VALUES = values();
+
+    public static OrpCalibrateCommand valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private OrpCalibrateCommand(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:fk_atlas.OrpCalibrateCommand)
   }
 
   /**
@@ -1181,7 +1660,7 @@ public final class FkAtlas {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(9);
+      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(13);
     }
 
     private static final ReplyType[] VALUES = values();
@@ -1294,7 +1773,7 @@ public final class FkAtlas {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(10);
+      return org.fieldkit.atlas.pb.FkAtlas.getDescriptor().getEnumTypes().get(14);
     }
 
     private static final ErrorType[] VALUES = values();
@@ -7772,22 +8251,34 @@ public final class FkAtlas {
       "ion\022\024\n\020CALIBRATION_NONE\020\000\022\026\n\022CALIBRATION" +
       "_STATUS\020\001\022\025\n\021CALIBRATION_CLEAR\020\002\022\023\n\017CALI" +
       "BRATION_SET\020\003*2\n\020TempCalibrations\022\r\n\tTEM" +
-      "P_NONE\020\000\022\017\n\013TEMP_SINGLE\020\001*=\n\016DoCalibrati" +
-      "ons\022\013\n\007DO_NONE\020\000\022\021\n\rDO_ATMOSPHERE\020\001\022\013\n\007D" +
-      "O_ZERO\020\002*E\n\016PhCalibrations\022\013\n\007PH_NONE\020\000\022" +
-      "\n\n\006PH_LOW\020\001\022\r\n\tPH_MIDDLE\020\002\022\013\n\007PH_HIGH\020\004*" +
-      "\211\001\n\022PhCalibrateCommand\022\025\n\021CALIBRATE_PH_N" +
-      "ONE\020\000\022\026\n\022CALIBRATE_PH_CLEAR\020\001\022\024\n\020CALIBRA" +
-      "TE_PH_LOW\020\002\022\027\n\023CALIBRATE_PH_MIDDLE\020\003\022\025\n\021" +
-      "CALIBRATE_PH_HIGH\020\004*[\n\016EcCalibrations\022\013\n" +
-      "\007EC_NONE\020\000\022\n\n\006EC_DRY\020\001\022\r\n\tEC_SINGLE\020\002\022\017\n" +
-      "\013EC_DUAL_LOW\020\004\022\020\n\014EC_DUAL_HIGH\020\010*/\n\017OrpC" +
-      "alibrations\022\014\n\010ORP_NONE\020\000\022\016\n\nORP_SINGLE\020" +
-      "\001*b\n\tReplyType\022\016\n\nREPLY_NONE\020\000\022\017\n\013REPLY_" +
-      "RETRY\020\001\022\017\n\013REPLY_ERROR\020\002\022\020\n\014REPLY_STATUS" +
-      "\020\003\022\021\n\rREPLY_COMMAND\020\004*2\n\tErrorType\022\010\n\004NO" +
-      "NE\020\000\022\013\n\007GENERAL\020\001\022\016\n\nUNEXPECTED\020\002B\027\n\025org" +
-      ".fieldkit.atlas.pbb\006proto3"
+      "P_NONE\020\000\022\017\n\013TEMP_SINGLE\020\001*d\n\024TempCalibra" +
+      "teCommand\022\027\n\023CALIBRATE_TEMP_NONE\020\000\022\030\n\024CA" +
+      "LIBRATE_TEMP_CLEAR\020\001\022\031\n\025CALIBRATE_TEMP_S" +
+      "INGLE\020\002*=\n\016DoCalibrations\022\013\n\007DO_NONE\020\000\022\021" +
+      "\n\rDO_ATMOSPHERE\020\001\022\013\n\007DO_ZERO\020\002*w\n\022DoCali" +
+      "brateCommand\022\025\n\021CALIBRATE_DO_NONE\020\000\022\026\n\022C" +
+      "ALIBRATE_DO_CLEAR\020\001\022\033\n\027CALIBRATE_DO_ATMO" +
+      "SPHERE\020\002\022\025\n\021CALIBRATE_DO_ZERO\020\003*E\n\016PhCal" +
+      "ibrations\022\013\n\007PH_NONE\020\000\022\n\n\006PH_LOW\020\001\022\r\n\tPH" +
+      "_MIDDLE\020\002\022\013\n\007PH_HIGH\020\004*\211\001\n\022PhCalibrateCo" +
+      "mmand\022\025\n\021CALIBRATE_PH_NONE\020\000\022\026\n\022CALIBRAT" +
+      "E_PH_CLEAR\020\001\022\024\n\020CALIBRATE_PH_LOW\020\002\022\027\n\023CA" +
+      "LIBRATE_PH_MIDDLE\020\003\022\025\n\021CALIBRATE_PH_HIGH" +
+      "\020\004*[\n\016EcCalibrations\022\013\n\007EC_NONE\020\000\022\n\n\006EC_" +
+      "DRY\020\001\022\r\n\tEC_SINGLE\020\002\022\017\n\013EC_DUAL_LOW\020\004\022\020\n" +
+      "\014EC_DUAL_HIGH\020\010*\251\001\n\022EcCalibrateCommand\022\025" +
+      "\n\021CALIBRATE_EC_NONE\020\000\022\026\n\022CALIBRATE_EC_CL" +
+      "EAR\020\001\022\024\n\020CALIBRATE_EC_DRY\020\002\022\027\n\023CALIBRATE" +
+      "_EC_SINGLE\020\003\022\031\n\025CALIBRATE_EC_DUAL_LOW\020\004\022" +
+      "\032\n\026CALIBRATE_EC_DUAL_HIGH\020\005*/\n\017OrpCalibr" +
+      "ations\022\014\n\010ORP_NONE\020\000\022\016\n\nORP_SINGLE\020\001*G\n\023" +
+      "OrpCalibrateCommand\022\026\n\022CALIBRATE_ORP_NON" +
+      "E\020\000\022\030\n\024CALIBRATE_ORP_SINGLE\020\001*b\n\tReplyTy" +
+      "pe\022\016\n\nREPLY_NONE\020\000\022\017\n\013REPLY_RETRY\020\001\022\017\n\013R" +
+      "EPLY_ERROR\020\002\022\020\n\014REPLY_STATUS\020\003\022\021\n\rREPLY_" +
+      "COMMAND\020\004*2\n\tErrorType\022\010\n\004NONE\020\000\022\013\n\007GENE" +
+      "RAL\020\001\022\016\n\nUNEXPECTED\020\002B\027\n\025org.fieldkit.at" +
+      "las.pbb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
