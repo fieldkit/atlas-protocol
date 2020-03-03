@@ -992,7 +992,9 @@ func init() {
 	proto.RegisterType((*WireAtlasReply)(nil), "fk_atlas.WireAtlasReply")
 }
 
-func init() { proto.RegisterFile("fk-atlas.proto", fileDescriptor_822d05f6175684bb) }
+func init() {
+	proto.RegisterFile("fk-atlas.proto", fileDescriptor_822d05f6175684bb)
+}
 
 var fileDescriptor_822d05f6175684bb = []byte{
 	// 1071 bytes of a gzipped FileDescriptorProto
