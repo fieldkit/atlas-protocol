@@ -2,7 +2,7 @@
   "nested": {
     "fk_atlas": {
       "options": {
-        "java_package": "org.fieldkit.atlas.pb"
+        "java_package": "org.conservify.fieldkit.atlas.pb"
       },
       "nested": {
         "SensorType": {
