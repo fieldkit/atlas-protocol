@@ -263,6 +263,7 @@
              * @property {fk_atlas.OrpCalibrations|null} [orp] AtlasCalibrationCommand orp
              * @property {number|null} [which] AtlasCalibrationCommand which
              * @property {number|null} [value] AtlasCalibrationCommand value
+             * @property {Uint8Array|null} [configuration] AtlasCalibrationCommand configuration
              */
     
             /**
@@ -345,6 +346,14 @@
             AtlasCalibrationCommand.prototype.value = 0;
     
             /**
+             * AtlasCalibrationCommand configuration.
+             * @member {Uint8Array} configuration
+             * @memberof fk_atlas.AtlasCalibrationCommand
+             * @instance
+             */
+            AtlasCalibrationCommand.prototype.configuration = $util.newBuffer([]);
+    
+            /**
              * Creates a new AtlasCalibrationCommand instance using the specified properties.
              * @function create
              * @memberof fk_atlas.AtlasCalibrationCommand
@@ -384,6 +393,8 @@
                     writer.uint32(/* id 7, wireType 5 =*/61).float(message.value);
                 if (message.which != null && message.hasOwnProperty("which"))
                     writer.uint32(/* id 8, wireType 0 =*/64).uint32(message.which);
+                if (message.configuration != null && message.hasOwnProperty("configuration"))
+                    writer.uint32(/* id 9, wireType 2 =*/74).bytes(message.configuration);
                 return writer;
             };
     
@@ -441,6 +452,9 @@
                         break;
                     case 7:
                         message.value = reader.float();
+                        break;
+                    case 9:
+                        message.configuration = reader.bytes();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -539,6 +553,9 @@
                 if (message.value != null && message.hasOwnProperty("value"))
                     if (typeof message.value !== "number")
                         return "value: number expected";
+                if (message.configuration != null && message.hasOwnProperty("configuration"))
+                    if (!(message.configuration && typeof message.configuration.length === "number" || $util.isString(message.configuration)))
+                        return "configuration: buffer expected";
                 return null;
             };
     
@@ -650,6 +667,11 @@
                     message.which = object.which >>> 0;
                 if (object.value != null)
                     message.value = Number(object.value);
+                if (object.configuration != null)
+                    if (typeof object.configuration === "string")
+                        $util.base64.decode(object.configuration, message.configuration = $util.newBuffer($util.base64.length(object.configuration)), 0);
+                    else if (object.configuration.length)
+                        message.configuration = object.configuration;
                 return message;
             };
     
@@ -675,6 +697,13 @@
                     object.orp = options.enums === String ? "ORP_NONE" : 0;
                     object.value = 0;
                     object.which = 0;
+                    if (options.bytes === String)
+                        object.configuration = "";
+                    else {
+                        object.configuration = [];
+                        if (options.bytes !== Array)
+                            object.configuration = $util.newBuffer(object.configuration);
+                    }
                 }
                 if (message.operation != null && message.hasOwnProperty("operation"))
                     object.operation = options.enums === String ? $root.fk_atlas.CalibrationOperation[message.operation] : message.operation;
@@ -692,6 +721,8 @@
                     object.value = options.json && !isFinite(message.value) ? String(message.value) : message.value;
                 if (message.which != null && message.hasOwnProperty("which"))
                     object.which = message.which;
+                if (message.configuration != null && message.hasOwnProperty("configuration"))
+                    object.configuration = options.bytes === String ? $util.base64.encode(message.configuration, 0, message.configuration.length) : options.bytes === Array ? Array.prototype.slice.call(message.configuration) : message.configuration;
                 return object;
             };
     
@@ -1428,6 +1459,7 @@
              * @property {fk_atlas.PhCalibrations|null} [ph] AtlasCalibrationStatus ph
              * @property {fk_atlas.EcCalibrations|null} [ec] AtlasCalibrationStatus ec
              * @property {fk_atlas.OrpCalibrations|null} [orp] AtlasCalibrationStatus orp
+             * @property {Uint8Array|null} [configuration] AtlasCalibrationStatus configuration
              */
     
             /**
@@ -1510,6 +1542,14 @@
             AtlasCalibrationStatus.prototype.orp = 0;
     
             /**
+             * AtlasCalibrationStatus configuration.
+             * @member {Uint8Array} configuration
+             * @memberof fk_atlas.AtlasCalibrationStatus
+             * @instance
+             */
+            AtlasCalibrationStatus.prototype.configuration = $util.newBuffer([]);
+    
+            /**
              * Creates a new AtlasCalibrationStatus instance using the specified properties.
              * @function create
              * @memberof fk_atlas.AtlasCalibrationStatus
@@ -1549,6 +1589,8 @@
                     writer.uint32(/* id 7, wireType 0 =*/56).int32(message.orp);
                 if (message.raw != null && message.hasOwnProperty("raw"))
                     writer.uint32(/* id 8, wireType 0 =*/64).uint32(message.raw);
+                if (message.configuration != null && message.hasOwnProperty("configuration"))
+                    writer.uint32(/* id 9, wireType 2 =*/74).bytes(message.configuration);
                 return writer;
             };
     
@@ -1606,6 +1648,9 @@
                         break;
                     case 7:
                         message.orp = reader.int32();
+                        break;
+                    case 9:
+                        message.configuration = reader.bytes();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -1706,6 +1751,9 @@
                     case 1:
                         break;
                     }
+                if (message.configuration != null && message.hasOwnProperty("configuration"))
+                    if (!(message.configuration && typeof message.configuration.length === "number" || $util.isString(message.configuration)))
+                        return "configuration: buffer expected";
                 return null;
             };
     
@@ -1825,6 +1873,11 @@
                     message.orp = 1;
                     break;
                 }
+                if (object.configuration != null)
+                    if (typeof object.configuration === "string")
+                        $util.base64.decode(object.configuration, message.configuration = $util.newBuffer($util.base64.length(object.configuration)), 0);
+                    else if (object.configuration.length)
+                        message.configuration = object.configuration;
                 return message;
             };
     
@@ -1850,6 +1903,13 @@
                     object.ec = options.enums === String ? "EC_NONE" : 0;
                     object.orp = options.enums === String ? "ORP_NONE" : 0;
                     object.raw = 0;
+                    if (options.bytes === String)
+                        object.configuration = "";
+                    else {
+                        object.configuration = [];
+                        if (options.bytes !== Array)
+                            object.configuration = $util.newBuffer(object.configuration);
+                    }
                 }
                 if (message.type != null && message.hasOwnProperty("type"))
                     object.type = options.enums === String ? $root.fk_atlas.SensorType[message.type] : message.type;
@@ -1867,6 +1927,8 @@
                     object.orp = options.enums === String ? $root.fk_atlas.OrpCalibrations[message.orp] : message.orp;
                 if (message.raw != null && message.hasOwnProperty("raw"))
                     object.raw = message.raw;
+                if (message.configuration != null && message.hasOwnProperty("configuration"))
+                    object.configuration = options.bytes === String ? $util.base64.encode(message.configuration, 0, message.configuration.length) : options.bytes === Array ? Array.prototype.slice.call(message.configuration) : message.configuration;
                 return object;
             };
     

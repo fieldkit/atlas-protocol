@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='fk_atlas',
   syntax='proto3',
   serialized_options=b'\n org.conservify.fieldkit.atlas.pb',
-  serialized_pb=b'\n\x0e\x66k-atlas.proto\x12\x08\x66k_atlas\"\xbb\x02\n\x17\x41tlasCalibrationCommand\x12\x31\n\toperation\x18\x01 \x01(\x0e\x32\x1e.fk_atlas.CalibrationOperation\x12(\n\x04temp\x18\x02 \x01(\x0e\x32\x1a.fk_atlas.TempCalibrations\x12\x31\n\x0f\x64issolvedOxygen\x18\x03 \x01(\x0e\x32\x18.fk_atlas.DoCalibrations\x12$\n\x02ph\x18\x04 \x01(\x0e\x32\x18.fk_atlas.PhCalibrations\x12$\n\x02\x65\x63\x18\x05 \x01(\x0e\x32\x18.fk_atlas.EcCalibrations\x12&\n\x03orp\x18\x06 \x01(\x0e\x32\x19.fk_atlas.OrpCalibrations\x12\r\n\x05which\x18\x08 \x01(\r\x12\r\n\x05value\x18\x07 \x01(\x02\"9\n\x0cTwoWireQuery\x12\x0c\n\x04read\x18\x01 \x01(\r\x12\r\n\x05write\x18\x02 \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\"$\n\rCompensations\x12\x13\n\x0btemperature\x18\x01 \x01(\x02\"\xc1\x01\n\x0eWireAtlasQuery\x12!\n\x04type\x18\x01 \x01(\x0e\x32\x13.fk_atlas.QueryType\x12\x36\n\x0b\x63\x61libration\x18\x02 \x01(\x0b\x32!.fk_atlas.AtlasCalibrationCommand\x12.\n\rcompensations\x18\x03 \x01(\x0b\x32\x17.fk_atlas.Compensations\x12$\n\x04wire\x18\x04 \x01(\x0b\x32\x16.fk_atlas.TwoWireQuery\"\xa8\x02\n\x16\x41tlasCalibrationStatus\x12\"\n\x04type\x18\x01 \x01(\x0e\x32\x14.fk_atlas.SensorType\x12\x0c\n\x04time\x18\x02 \x01(\r\x12\x0b\n\x03raw\x18\x08 \x01(\r\x12(\n\x04temp\x18\x03 \x01(\x0e\x32\x1a.fk_atlas.TempCalibrations\x12\x31\n\x0f\x64issolvedOxygen\x18\x04 \x01(\x0e\x32\x18.fk_atlas.DoCalibrations\x12$\n\x02ph\x18\x05 \x01(\x0e\x32\x18.fk_atlas.PhCalibrations\x12$\n\x02\x65\x63\x18\x06 \x01(\x0e\x32\x18.fk_atlas.EcCalibrations\x12&\n\x03orp\x18\x07 \x01(\x0e\x32\x19.fk_atlas.OrpCalibrations\"\x1c\n\x0cTwoWireReply\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\";\n\x05\x45rror\x12!\n\x04type\x18\x01 \x01(\x0e\x32\x13.fk_atlas.ErrorType\x12\x0f\n\x07message\x18\x02 \x01(\t\"\xb1\x01\n\x0eWireAtlasReply\x12!\n\x04type\x18\x01 \x01(\x0e\x32\x13.fk_atlas.ReplyType\x12\x1f\n\x06\x65rrors\x18\x02 \x03(\x0b\x32\x0f.fk_atlas.Error\x12\x35\n\x0b\x63\x61libration\x18\x03 \x01(\x0b\x32 .fk_atlas.AtlasCalibrationStatus\x12$\n\x04wire\x18\x04 \x01(\x0b\x32\x16.fk_atlas.TwoWireReply*k\n\nSensorType\x12\x0f\n\x0bSENSOR_NONE\x10\x00\x12\r\n\tSENSOR_PH\x10\x01\x12\x0f\n\x0bSENSOR_TEMP\x10\x02\x12\x0e\n\nSENSOR_ORP\x10\x03\x12\r\n\tSENSOR_DO\x10\x04\x12\r\n\tSENSOR_EC\x10\x05*\x1b\n\tQueryType\x12\x0e\n\nQUERY_NONE\x10\x00*p\n\x14\x43\x61librationOperation\x12\x14\n\x10\x43\x41LIBRATION_NONE\x10\x00\x12\x16\n\x12\x43\x41LIBRATION_STATUS\x10\x01\x12\x15\n\x11\x43\x41LIBRATION_CLEAR\x10\x02\x12\x13\n\x0f\x43\x41LIBRATION_SET\x10\x03*2\n\x10TempCalibrations\x12\r\n\tTEMP_NONE\x10\x00\x12\x0f\n\x0bTEMP_SINGLE\x10\x01*d\n\x14TempCalibrateCommand\x12\x17\n\x13\x43\x41LIBRATE_TEMP_NONE\x10\x00\x12\x18\n\x14\x43\x41LIBRATE_TEMP_CLEAR\x10\x01\x12\x19\n\x15\x43\x41LIBRATE_TEMP_SINGLE\x10\x02*=\n\x0e\x44oCalibrations\x12\x0b\n\x07\x44O_NONE\x10\x00\x12\x11\n\rDO_ATMOSPHERE\x10\x01\x12\x0b\n\x07\x44O_ZERO\x10\x02*w\n\x12\x44oCalibrateCommand\x12\x15\n\x11\x43\x41LIBRATE_DO_NONE\x10\x00\x12\x16\n\x12\x43\x41LIBRATE_DO_CLEAR\x10\x01\x12\x1b\n\x17\x43\x41LIBRATE_DO_ATMOSPHERE\x10\x02\x12\x15\n\x11\x43\x41LIBRATE_DO_ZERO\x10\x03*E\n\x0ePhCalibrations\x12\x0b\n\x07PH_NONE\x10\x00\x12\n\n\x06PH_LOW\x10\x01\x12\r\n\tPH_MIDDLE\x10\x02\x12\x0b\n\x07PH_HIGH\x10\x04*\x89\x01\n\x12PhCalibrateCommand\x12\x15\n\x11\x43\x41LIBRATE_PH_NONE\x10\x00\x12\x16\n\x12\x43\x41LIBRATE_PH_CLEAR\x10\x01\x12\x14\n\x10\x43\x41LIBRATE_PH_LOW\x10\x02\x12\x17\n\x13\x43\x41LIBRATE_PH_MIDDLE\x10\x03\x12\x15\n\x11\x43\x41LIBRATE_PH_HIGH\x10\x04*[\n\x0e\x45\x63\x43\x61librations\x12\x0b\n\x07\x45\x43_NONE\x10\x00\x12\n\n\x06\x45\x43_DRY\x10\x01\x12\r\n\tEC_SINGLE\x10\x02\x12\x0f\n\x0b\x45\x43_DUAL_LOW\x10\x04\x12\x10\n\x0c\x45\x43_DUAL_HIGH\x10\x08*\xa9\x01\n\x12\x45\x63\x43\x61librateCommand\x12\x15\n\x11\x43\x41LIBRATE_EC_NONE\x10\x00\x12\x16\n\x12\x43\x41LIBRATE_EC_CLEAR\x10\x01\x12\x14\n\x10\x43\x41LIBRATE_EC_DRY\x10\x02\x12\x17\n\x13\x43\x41LIBRATE_EC_SINGLE\x10\x03\x12\x19\n\x15\x43\x41LIBRATE_EC_DUAL_LOW\x10\x04\x12\x1a\n\x16\x43\x41LIBRATE_EC_DUAL_HIGH\x10\x05*/\n\x0fOrpCalibrations\x12\x0c\n\x08ORP_NONE\x10\x00\x12\x0e\n\nORP_SINGLE\x10\x01*G\n\x13OrpCalibrateCommand\x12\x16\n\x12\x43\x41LIBRATE_ORP_NONE\x10\x00\x12\x18\n\x14\x43\x41LIBRATE_ORP_SINGLE\x10\x01*b\n\tReplyType\x12\x0e\n\nREPLY_NONE\x10\x00\x12\x0f\n\x0bREPLY_RETRY\x10\x01\x12\x0f\n\x0bREPLY_ERROR\x10\x02\x12\x10\n\x0cREPLY_STATUS\x10\x03\x12\x11\n\rREPLY_COMMAND\x10\x04*2\n\tErrorType\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07GENERAL\x10\x01\x12\x0e\n\nUNEXPECTED\x10\x02\x42\"\n org.conservify.fieldkit.atlas.pbb\x06proto3'
+  serialized_pb=b'\n\x0e\x66k-atlas.proto\x12\x08\x66k_atlas\"\xd2\x02\n\x17\x41tlasCalibrationCommand\x12\x31\n\toperation\x18\x01 \x01(\x0e\x32\x1e.fk_atlas.CalibrationOperation\x12(\n\x04temp\x18\x02 \x01(\x0e\x32\x1a.fk_atlas.TempCalibrations\x12\x31\n\x0f\x64issolvedOxygen\x18\x03 \x01(\x0e\x32\x18.fk_atlas.DoCalibrations\x12$\n\x02ph\x18\x04 \x01(\x0e\x32\x18.fk_atlas.PhCalibrations\x12$\n\x02\x65\x63\x18\x05 \x01(\x0e\x32\x18.fk_atlas.EcCalibrations\x12&\n\x03orp\x18\x06 \x01(\x0e\x32\x19.fk_atlas.OrpCalibrations\x12\r\n\x05which\x18\x08 \x01(\r\x12\r\n\x05value\x18\x07 \x01(\x02\x12\x15\n\rconfiguration\x18\t \x01(\x0c\"9\n\x0cTwoWireQuery\x12\x0c\n\x04read\x18\x01 \x01(\r\x12\r\n\x05write\x18\x02 \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\"$\n\rCompensations\x12\x13\n\x0btemperature\x18\x01 \x01(\x02\"\xc1\x01\n\x0eWireAtlasQuery\x12!\n\x04type\x18\x01 \x01(\x0e\x32\x13.fk_atlas.QueryType\x12\x36\n\x0b\x63\x61libration\x18\x02 \x01(\x0b\x32!.fk_atlas.AtlasCalibrationCommand\x12.\n\rcompensations\x18\x03 \x01(\x0b\x32\x17.fk_atlas.Compensations\x12$\n\x04wire\x18\x04 \x01(\x0b\x32\x16.fk_atlas.TwoWireQuery\"\xbf\x02\n\x16\x41tlasCalibrationStatus\x12\"\n\x04type\x18\x01 \x01(\x0e\x32\x14.fk_atlas.SensorType\x12\x0c\n\x04time\x18\x02 \x01(\r\x12\x0b\n\x03raw\x18\x08 \x01(\r\x12(\n\x04temp\x18\x03 \x01(\x0e\x32\x1a.fk_atlas.TempCalibrations\x12\x31\n\x0f\x64issolvedOxygen\x18\x04 \x01(\x0e\x32\x18.fk_atlas.DoCalibrations\x12$\n\x02ph\x18\x05 \x01(\x0e\x32\x18.fk_atlas.PhCalibrations\x12$\n\x02\x65\x63\x18\x06 \x01(\x0e\x32\x18.fk_atlas.EcCalibrations\x12&\n\x03orp\x18\x07 \x01(\x0e\x32\x19.fk_atlas.OrpCalibrations\x12\x15\n\rconfiguration\x18\t \x01(\x0c\"\x1c\n\x0cTwoWireReply\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\";\n\x05\x45rror\x12!\n\x04type\x18\x01 \x01(\x0e\x32\x13.fk_atlas.ErrorType\x12\x0f\n\x07message\x18\x02 \x01(\t\"\xb1\x01\n\x0eWireAtlasReply\x12!\n\x04type\x18\x01 \x01(\x0e\x32\x13.fk_atlas.ReplyType\x12\x1f\n\x06\x65rrors\x18\x02 \x03(\x0b\x32\x0f.fk_atlas.Error\x12\x35\n\x0b\x63\x61libration\x18\x03 \x01(\x0b\x32 .fk_atlas.AtlasCalibrationStatus\x12$\n\x04wire\x18\x04 \x01(\x0b\x32\x16.fk_atlas.TwoWireReply*k\n\nSensorType\x12\x0f\n\x0bSENSOR_NONE\x10\x00\x12\r\n\tSENSOR_PH\x10\x01\x12\x0f\n\x0bSENSOR_TEMP\x10\x02\x12\x0e\n\nSENSOR_ORP\x10\x03\x12\r\n\tSENSOR_DO\x10\x04\x12\r\n\tSENSOR_EC\x10\x05*\x1b\n\tQueryType\x12\x0e\n\nQUERY_NONE\x10\x00*p\n\x14\x43\x61librationOperation\x12\x14\n\x10\x43\x41LIBRATION_NONE\x10\x00\x12\x16\n\x12\x43\x41LIBRATION_STATUS\x10\x01\x12\x15\n\x11\x43\x41LIBRATION_CLEAR\x10\x02\x12\x13\n\x0f\x43\x41LIBRATION_SET\x10\x03*2\n\x10TempCalibrations\x12\r\n\tTEMP_NONE\x10\x00\x12\x0f\n\x0bTEMP_SINGLE\x10\x01*d\n\x14TempCalibrateCommand\x12\x17\n\x13\x43\x41LIBRATE_TEMP_NONE\x10\x00\x12\x18\n\x14\x43\x41LIBRATE_TEMP_CLEAR\x10\x01\x12\x19\n\x15\x43\x41LIBRATE_TEMP_SINGLE\x10\x02*=\n\x0e\x44oCalibrations\x12\x0b\n\x07\x44O_NONE\x10\x00\x12\x11\n\rDO_ATMOSPHERE\x10\x01\x12\x0b\n\x07\x44O_ZERO\x10\x02*w\n\x12\x44oCalibrateCommand\x12\x15\n\x11\x43\x41LIBRATE_DO_NONE\x10\x00\x12\x16\n\x12\x43\x41LIBRATE_DO_CLEAR\x10\x01\x12\x1b\n\x17\x43\x41LIBRATE_DO_ATMOSPHERE\x10\x02\x12\x15\n\x11\x43\x41LIBRATE_DO_ZERO\x10\x03*E\n\x0ePhCalibrations\x12\x0b\n\x07PH_NONE\x10\x00\x12\n\n\x06PH_LOW\x10\x01\x12\r\n\tPH_MIDDLE\x10\x02\x12\x0b\n\x07PH_HIGH\x10\x04*\x89\x01\n\x12PhCalibrateCommand\x12\x15\n\x11\x43\x41LIBRATE_PH_NONE\x10\x00\x12\x16\n\x12\x43\x41LIBRATE_PH_CLEAR\x10\x01\x12\x14\n\x10\x43\x41LIBRATE_PH_LOW\x10\x02\x12\x17\n\x13\x43\x41LIBRATE_PH_MIDDLE\x10\x03\x12\x15\n\x11\x43\x41LIBRATE_PH_HIGH\x10\x04*[\n\x0e\x45\x63\x43\x61librations\x12\x0b\n\x07\x45\x43_NONE\x10\x00\x12\n\n\x06\x45\x43_DRY\x10\x01\x12\r\n\tEC_SINGLE\x10\x02\x12\x0f\n\x0b\x45\x43_DUAL_LOW\x10\x04\x12\x10\n\x0c\x45\x43_DUAL_HIGH\x10\x08*\xa9\x01\n\x12\x45\x63\x43\x61librateCommand\x12\x15\n\x11\x43\x41LIBRATE_EC_NONE\x10\x00\x12\x16\n\x12\x43\x41LIBRATE_EC_CLEAR\x10\x01\x12\x14\n\x10\x43\x41LIBRATE_EC_DRY\x10\x02\x12\x17\n\x13\x43\x41LIBRATE_EC_SINGLE\x10\x03\x12\x19\n\x15\x43\x41LIBRATE_EC_DUAL_LOW\x10\x04\x12\x1a\n\x16\x43\x41LIBRATE_EC_DUAL_HIGH\x10\x05*/\n\x0fOrpCalibrations\x12\x0c\n\x08ORP_NONE\x10\x00\x12\x0e\n\nORP_SINGLE\x10\x01*G\n\x13OrpCalibrateCommand\x12\x16\n\x12\x43\x41LIBRATE_ORP_NONE\x10\x00\x12\x18\n\x14\x43\x41LIBRATE_ORP_SINGLE\x10\x01*b\n\tReplyType\x12\x0e\n\nREPLY_NONE\x10\x00\x12\x0f\n\x0bREPLY_RETRY\x10\x01\x12\x0f\n\x0bREPLY_ERROR\x10\x02\x12\x10\n\x0cREPLY_STATUS\x10\x03\x12\x11\n\rREPLY_COMMAND\x10\x04*2\n\tErrorType\x12\x08\n\x04NONE\x10\x00\x12\x0b\n\x07GENERAL\x10\x01\x12\x0e\n\nUNEXPECTED\x10\x02\x42\"\n org.conservify.fieldkit.atlas.pbb\x06proto3'
 )
 
 _SENSORTYPE = _descriptor.EnumDescriptor(
@@ -55,8 +55,8 @@ _SENSORTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1209,
-  serialized_end=1316,
+  serialized_start=1255,
+  serialized_end=1362,
 )
 _sym_db.RegisterEnumDescriptor(_SENSORTYPE)
 
@@ -74,8 +74,8 @@ _QUERYTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1318,
-  serialized_end=1345,
+  serialized_start=1364,
+  serialized_end=1391,
 )
 _sym_db.RegisterEnumDescriptor(_QUERYTYPE)
 
@@ -105,8 +105,8 @@ _CALIBRATIONOPERATION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1347,
-  serialized_end=1459,
+  serialized_start=1393,
+  serialized_end=1505,
 )
 _sym_db.RegisterEnumDescriptor(_CALIBRATIONOPERATION)
 
@@ -128,8 +128,8 @@ _TEMPCALIBRATIONS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1461,
-  serialized_end=1511,
+  serialized_start=1507,
+  serialized_end=1557,
 )
 _sym_db.RegisterEnumDescriptor(_TEMPCALIBRATIONS)
 
@@ -155,8 +155,8 @@ _TEMPCALIBRATECOMMAND = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1513,
-  serialized_end=1613,
+  serialized_start=1559,
+  serialized_end=1659,
 )
 _sym_db.RegisterEnumDescriptor(_TEMPCALIBRATECOMMAND)
 
@@ -182,8 +182,8 @@ _DOCALIBRATIONS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1615,
-  serialized_end=1676,
+  serialized_start=1661,
+  serialized_end=1722,
 )
 _sym_db.RegisterEnumDescriptor(_DOCALIBRATIONS)
 
@@ -213,8 +213,8 @@ _DOCALIBRATECOMMAND = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1678,
-  serialized_end=1797,
+  serialized_start=1724,
+  serialized_end=1843,
 )
 _sym_db.RegisterEnumDescriptor(_DOCALIBRATECOMMAND)
 
@@ -244,8 +244,8 @@ _PHCALIBRATIONS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1799,
-  serialized_end=1868,
+  serialized_start=1845,
+  serialized_end=1914,
 )
 _sym_db.RegisterEnumDescriptor(_PHCALIBRATIONS)
 
@@ -279,8 +279,8 @@ _PHCALIBRATECOMMAND = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1871,
-  serialized_end=2008,
+  serialized_start=1917,
+  serialized_end=2054,
 )
 _sym_db.RegisterEnumDescriptor(_PHCALIBRATECOMMAND)
 
@@ -314,8 +314,8 @@ _ECCALIBRATIONS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2010,
-  serialized_end=2101,
+  serialized_start=2056,
+  serialized_end=2147,
 )
 _sym_db.RegisterEnumDescriptor(_ECCALIBRATIONS)
 
@@ -353,8 +353,8 @@ _ECCALIBRATECOMMAND = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2104,
-  serialized_end=2273,
+  serialized_start=2150,
+  serialized_end=2319,
 )
 _sym_db.RegisterEnumDescriptor(_ECCALIBRATECOMMAND)
 
@@ -376,8 +376,8 @@ _ORPCALIBRATIONS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2275,
-  serialized_end=2322,
+  serialized_start=2321,
+  serialized_end=2368,
 )
 _sym_db.RegisterEnumDescriptor(_ORPCALIBRATIONS)
 
@@ -399,8 +399,8 @@ _ORPCALIBRATECOMMAND = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2324,
-  serialized_end=2395,
+  serialized_start=2370,
+  serialized_end=2441,
 )
 _sym_db.RegisterEnumDescriptor(_ORPCALIBRATECOMMAND)
 
@@ -434,8 +434,8 @@ _REPLYTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2397,
-  serialized_end=2495,
+  serialized_start=2443,
+  serialized_end=2541,
 )
 _sym_db.RegisterEnumDescriptor(_REPLYTYPE)
 
@@ -461,8 +461,8 @@ _ERRORTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2497,
-  serialized_end=2547,
+  serialized_start=2543,
+  serialized_end=2593,
 )
 _sym_db.RegisterEnumDescriptor(_ERRORTYPE)
 
@@ -588,6 +588,13 @@ _ATLASCALIBRATIONCOMMAND = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='configuration', full_name='fk_atlas.AtlasCalibrationCommand.configuration', index=8,
+      number=9, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -601,7 +608,7 @@ _ATLASCALIBRATIONCOMMAND = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=29,
-  serialized_end=344,
+  serialized_end=367,
 )
 
 
@@ -645,8 +652,8 @@ _TWOWIREQUERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=346,
-  serialized_end=403,
+  serialized_start=369,
+  serialized_end=426,
 )
 
 
@@ -676,8 +683,8 @@ _COMPENSATIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=405,
-  serialized_end=441,
+  serialized_start=428,
+  serialized_end=464,
 )
 
 
@@ -728,8 +735,8 @@ _WIREATLASQUERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=444,
-  serialized_end=637,
+  serialized_start=467,
+  serialized_end=660,
 )
 
 
@@ -796,6 +803,13 @@ _ATLASCALIBRATIONSTATUS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='configuration', full_name='fk_atlas.AtlasCalibrationStatus.configuration', index=8,
+      number=9, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -808,8 +822,8 @@ _ATLASCALIBRATIONSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=640,
-  serialized_end=936,
+  serialized_start=663,
+  serialized_end=982,
 )
 
 
@@ -839,8 +853,8 @@ _TWOWIREREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=938,
-  serialized_end=966,
+  serialized_start=984,
+  serialized_end=1012,
 )
 
 
@@ -877,8 +891,8 @@ _ERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=968,
-  serialized_end=1027,
+  serialized_start=1014,
+  serialized_end=1073,
 )
 
 
@@ -929,8 +943,8 @@ _WIREATLASREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1030,
-  serialized_end=1207,
+  serialized_start=1076,
+  serialized_end=1253,
 )
 
 _ATLASCALIBRATIONCOMMAND.fields_by_name['operation'].enum_type = _CALIBRATIONOPERATION

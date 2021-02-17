@@ -127,6 +127,9 @@ export namespace fk_atlas {
 
         /** AtlasCalibrationCommand value */
         value?: (number|null);
+
+        /** AtlasCalibrationCommand configuration */
+        configuration?: (Uint8Array|null);
     }
 
     /** Represents an AtlasCalibrationCommand. */
@@ -161,6 +164,9 @@ export namespace fk_atlas {
 
         /** AtlasCalibrationCommand value. */
         public value: number;
+
+        /** AtlasCalibrationCommand configuration. */
+        public configuration: Uint8Array;
 
         /**
          * Creates a new AtlasCalibrationCommand instance using the specified properties.
@@ -559,6 +565,9 @@ export namespace fk_atlas {
 
         /** AtlasCalibrationStatus orp */
         orp?: (fk_atlas.OrpCalibrations|null);
+
+        /** AtlasCalibrationStatus configuration */
+        configuration?: (Uint8Array|null);
     }
 
     /** Represents an AtlasCalibrationStatus. */
@@ -593,6 +602,9 @@ export namespace fk_atlas {
 
         /** AtlasCalibrationStatus orp. */
         public orp: fk_atlas.OrpCalibrations;
+
+        /** AtlasCalibrationStatus configuration. */
+        public configuration: Uint8Array;
 
         /**
          * Creates a new AtlasCalibrationStatus instance using the specified properties.

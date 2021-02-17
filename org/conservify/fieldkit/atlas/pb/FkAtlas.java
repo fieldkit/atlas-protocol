@@ -1649,6 +1649,12 @@ public final class FkAtlas {
      * @return The value.
      */
     float getValue();
+
+    /**
+     * <code>bytes configuration = 9;</code>
+     * @return The configuration.
+     */
+    com.google.protobuf.ByteString getConfiguration();
   }
   /**
    * Protobuf type {@code fk_atlas.AtlasCalibrationCommand}
@@ -1659,6 +1665,7 @@ public final class FkAtlas {
       // @@protoc_insertion_point(message_implements:fk_atlas.AtlasCalibrationCommand)
       AtlasCalibrationCommandOrBuilder {
     private AtlasCalibrationCommand() {
+      configuration_ = com.google.protobuf.ByteString.EMPTY;
     }
     public static final int OPERATION_FIELD_NUMBER = 1;
     private int operation_;
@@ -1962,6 +1969,33 @@ public final class FkAtlas {
     private void clearValue() {
       
       value_ = 0F;
+    }
+
+    public static final int CONFIGURATION_FIELD_NUMBER = 9;
+    private com.google.protobuf.ByteString configuration_;
+    /**
+     * <code>bytes configuration = 9;</code>
+     * @return The configuration.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getConfiguration() {
+      return configuration_;
+    }
+    /**
+     * <code>bytes configuration = 9;</code>
+     * @param value The configuration to set.
+     */
+    private void setConfiguration(com.google.protobuf.ByteString value) {
+      value.getClass();
+  
+      configuration_ = value;
+    }
+    /**
+     * <code>bytes configuration = 9;</code>
+     */
+    private void clearConfiguration() {
+      
+      configuration_ = getDefaultInstance().getConfiguration();
     }
 
     public static org.conservify.fieldkit.atlas.pb.FkAtlas.AtlasCalibrationCommand parseFrom(
@@ -2391,6 +2425,34 @@ public final class FkAtlas {
         return this;
       }
 
+      /**
+       * <code>bytes configuration = 9;</code>
+       * @return The configuration.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getConfiguration() {
+        return instance.getConfiguration();
+      }
+      /**
+       * <code>bytes configuration = 9;</code>
+       * @param value The configuration to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConfiguration(com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setConfiguration(value);
+        return this;
+      }
+      /**
+       * <code>bytes configuration = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConfiguration() {
+        copyOnWrite();
+        instance.clearConfiguration();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:fk_atlas.AtlasCalibrationCommand)
     }
     @java.lang.Override
@@ -2415,10 +2477,11 @@ public final class FkAtlas {
               "orp_",
               "value_",
               "which_",
+              "configuration_",
             };
             java.lang.String info =
-                "\u0000\b\u0000\u0000\u0001\b\b\u0000\u0000\u0000\u0001\f\u0002\f\u0003\f\u0004\f" +
-                "\u0005\f\u0006\f\u0007\u0001\b\u000b";
+                "\u0000\t\u0000\u0000\u0001\t\t\u0000\u0000\u0000\u0001\f\u0002\f\u0003\f\u0004\f" +
+                "\u0005\f\u0006\f\u0007\u0001\b\u000b\t\n";
             return newMessageInfo(DEFAULT_INSTANCE, info, objects);
         }
         // fall through
@@ -3763,6 +3826,12 @@ public final class FkAtlas {
      * @return The orp.
      */
     org.conservify.fieldkit.atlas.pb.FkAtlas.OrpCalibrations getOrp();
+
+    /**
+     * <code>bytes configuration = 9;</code>
+     * @return The configuration.
+     */
+    com.google.protobuf.ByteString getConfiguration();
   }
   /**
    * Protobuf type {@code fk_atlas.AtlasCalibrationStatus}
@@ -3773,6 +3842,7 @@ public final class FkAtlas {
       // @@protoc_insertion_point(message_implements:fk_atlas.AtlasCalibrationStatus)
       AtlasCalibrationStatusOrBuilder {
     private AtlasCalibrationStatus() {
+      configuration_ = com.google.protobuf.ByteString.EMPTY;
     }
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_;
@@ -4076,6 +4146,33 @@ public final class FkAtlas {
     private void clearOrp() {
       
       orp_ = 0;
+    }
+
+    public static final int CONFIGURATION_FIELD_NUMBER = 9;
+    private com.google.protobuf.ByteString configuration_;
+    /**
+     * <code>bytes configuration = 9;</code>
+     * @return The configuration.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getConfiguration() {
+      return configuration_;
+    }
+    /**
+     * <code>bytes configuration = 9;</code>
+     * @param value The configuration to set.
+     */
+    private void setConfiguration(com.google.protobuf.ByteString value) {
+      value.getClass();
+  
+      configuration_ = value;
+    }
+    /**
+     * <code>bytes configuration = 9;</code>
+     */
+    private void clearConfiguration() {
+      
+      configuration_ = getDefaultInstance().getConfiguration();
     }
 
     public static org.conservify.fieldkit.atlas.pb.FkAtlas.AtlasCalibrationStatus parseFrom(
@@ -4505,6 +4602,34 @@ public final class FkAtlas {
         return this;
       }
 
+      /**
+       * <code>bytes configuration = 9;</code>
+       * @return The configuration.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getConfiguration() {
+        return instance.getConfiguration();
+      }
+      /**
+       * <code>bytes configuration = 9;</code>
+       * @param value The configuration to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConfiguration(com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setConfiguration(value);
+        return this;
+      }
+      /**
+       * <code>bytes configuration = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConfiguration() {
+        copyOnWrite();
+        instance.clearConfiguration();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:fk_atlas.AtlasCalibrationStatus)
     }
     @java.lang.Override
@@ -4529,10 +4654,11 @@ public final class FkAtlas {
               "ec_",
               "orp_",
               "raw_",
+              "configuration_",
             };
             java.lang.String info =
-                "\u0000\b\u0000\u0000\u0001\b\b\u0000\u0000\u0000\u0001\f\u0002\u000b\u0003\f\u0004" +
-                "\f\u0005\f\u0006\f\u0007\f\b\u000b";
+                "\u0000\t\u0000\u0000\u0001\t\t\u0000\u0000\u0000\u0001\f\u0002\u000b\u0003\f\u0004" +
+                "\f\u0005\f\u0006\f\u0007\f\b\u000b\t\n";
             return newMessageInfo(DEFAULT_INSTANCE, info, objects);
         }
         // fall through

@@ -137,6 +137,10 @@
             "value": {
               "type": "float",
               "id": 7
+            },
+            "configuration": {
+              "type": "bytes",
+              "id": 9
             }
           }
         },
@@ -217,6 +221,10 @@
             "orp": {
               "type": "OrpCalibrations",
               "id": 7
+            },
+            "configuration": {
+              "type": "bytes",
+              "id": 9
             }
           }
         },

@@ -97,6 +97,7 @@ message AtlasCalibrationCommand {
   OrpCalibrations orp = 6;
   uint32 which = 8;
   float value = 7;
+  bytes configuration = 9;
 }
 
 message TwoWireQuery {
@@ -125,6 +126,7 @@ message AtlasCalibrationStatus {
   PhCalibrations ph = 5;
   EcCalibrations ec = 6;
   OrpCalibrations orp = 7;
+  bytes configuration = 9;
 }
 
 message TwoWireReply {
